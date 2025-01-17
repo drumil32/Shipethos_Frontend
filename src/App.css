@@ -1,7 +1,26 @@
-body , htm {
+body , html {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  /* font-family: 'SofiaProRegularAz'; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+.banner {
+  background-image: url("https://www.montdorinterior.com/wp-content/uploads/2024/05/montdor-banner.webp");
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling of the image */
+  height: 800px; /* Ensures the height stays consistent */
+  padding-top: 187px;
+}
+
+.home-second{
+  background-image: url("https://www.montdorinterior.com/wp-content/themes/montdor-db/assets/images/wel22-bg.jpg");
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling of the image */
+}
+
