@@ -123,10 +123,10 @@ const Home = () => {
       </section>
 
       <section className="home-three h-full">
-      <div className="p-[60px]">
+      <div className="px-[160px] py-[60px]">
         <div>
           <article>
-            <h2 className="font-bold text-4xl text-[#333333] mb-3">
+            <h2 className="font-bold text-4xl text-[#333333] mb-3 w-[52%]">
               Why Choose Montdor Interior Designer in Ahmedabad?
             </h2>
             <p className="text-xl text-[#333333] mb-3">
