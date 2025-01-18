@@ -6,6 +6,7 @@ import About from './Pages/About';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import DataForm from './Components/DataForm';  // Import the DataForm component
+import FloatingIcons from './Components/FloatingIcons';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/about' element={<About />} />
       </Routes>
       <Footer />
+      <FloatingIcons />
       <DataForm /> {/* Include the DataForm component */}
     </Router>
   );

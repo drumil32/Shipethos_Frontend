@@ -6,7 +6,7 @@ const FloatingIcons = () => {
       {/* WhatsApp Icon */}
       <a
         href="https://wa.me/your-phone-number" // Replace with your WhatsApp number link
-        className="flex justify-center items-center w-16 h-16 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-all"
+        className="flex justify-center items-center w-16 h-16 bg-green-500  rounded-full shadow-lg hover:bg-green-600 transition-all"
       >
         <FaWhatsapp className="text-white text-2xl" />
       </a>
