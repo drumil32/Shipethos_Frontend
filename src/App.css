@@ -1,26 +1,76 @@
-body , html {
+body, html {
   height: 100vh;
   width: 100%;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* font-family: 'SofiaProRegularAz'; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .banner {
   background-image: url("https://www.montdorinterior.com/wp-content/uploads/2024/05/montdor-banner.webp");
-  background-size: cover; /* Ensures the image covers the entire section */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents tiling of the image */
-  height: 800px; /* Ensures the height stays consistent */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 800px;
   padding-top: 187px;
 }
 
-.home-second{
+.home-second {
   background-image: url("https://www.montdorinterior.com/wp-content/themes/montdor-db/assets/images/wel22-bg.jpg");
-  background-size: cover; /* Ensures the image covers the entire section */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents tiling of the image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+
+.following-projects-row {
+  overflow: hidden;
+  height: 200px; /* Specify a fixed height */
+}
+
+.following_client_slider {
+  display: flex;
+  gap: 16px;
+  scroll-behavior: smooth;
+  overflow-x: scroll; /* Ensure horizontal scrolling */
+  padding-bottom: 10px; /* Optional: Prevent content from being hidden under container */
+}
+
+.item {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 280px; /* Width of each item */
+  height: 160px; /* Height of each item */
+}
+
+.client-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .item {
+    min-width: 180px; /* Adjust size for mobile */
+  }
+}
+
+.row vendors_img{
+  display: flex;
+  flex-wrap: wrap;
+}
+.vendors_img .col2 img{
+  opacity: 0.6;
+}
+.img_blk{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.vendors_img .col2 img:hover {
+  opacity: 1;
+  filter: brightness(100%) saturate(10%) invert(28%) sepia(89%) saturate(522%) hue-rotate(330deg);
+}
