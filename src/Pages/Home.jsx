@@ -399,7 +399,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="vendors_sec page_sec px-4   lg:p-[0px]">
+      <section className="vendors_sec page_sec px-4 pb-[40px]  lg:p-[0px]">
         <div className="row a-item mb-8 md:px-[6%]">
           <div className="col-md-9">
             <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[52%]">
