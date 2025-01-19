@@ -92,7 +92,7 @@ const Home = () => {
         </div>
 
         {/* Form Section */}
-        <div className="form form-section flex flex-col sm:w-full md:w-1/2 gap-4 bg-white rounded-md p-12 mt-6 lg:mt-0 lg:w-1/3">
+        <div className="form form-section flex flex-col sm:w-full md:w-1/2 gap-4 bg-white rounded-md p-12 mt-6 lg:mt-0 lg:w-[30%]">
           <h3 className="font-bold text-4xl text-center">
             Talk to our Design Expert
           </h3>
@@ -129,7 +129,7 @@ const Home = () => {
       </section>
 
       <section className="home-second md:p-[60px] px-4 py-[70px] h-full">
-        <div className="flex justify-evenly lg:gap-32 gap-6 lg:flex-row flex-col md:items-center">
+        <div className="flex justify-evenly lg:gap-32 gap-6 lg:flex-row  flex-col md:items-center">
           <div className="flex flex-col lg:w-[580px] item-start leading-7 text-start w-full ">
             <p className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full ">
               Elegant Functional Interiors
@@ -182,14 +182,14 @@ const Home = () => {
                   className="flex transition-transform duration-300 ease-in-out gap-6"
                   style={{
                     transform: `translateX(-${
-                      currentIndex * (window.innerWidth >= 1024 ? 30 : 107)
+                      currentIndex * (window.innerWidth >= 1024 ? 20 : window.innerWidth >=795 && window.innerWidth <=1024  ? 30 : 106)
                     }%)`, // Applies 30% for lg/md, 100% for mobile
                   }}
                 >
                   {items.map((item, index) => (
                     <div
                       key={index}
-                      className="bg-white rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[200px] flex-shrink-0 py-[50px]"
+                      className="bg-white rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[300px] flex-shrink-0 py-[50px]"
                     >
                       <h3 className="text-[#333] text-[30px] lg:text-[20px] font-bold">
                         {item.title}
@@ -236,7 +236,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="interior_sec page_sec md:p-[40px] px-4 py-[70px] lg:p-[60px]">
+      <section className="interior_sec page_sec md:p-[60px] px-4 py-[70px] lg:p-[80px]">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:justify-between lg:flex-row items-center justify-between mb-12">
           <div className="lg:w-9/12">
@@ -247,7 +247,7 @@ const Home = () => {
               Take a tour of the homes we’ve designed for our customers
             </p>
           </div>
-          <div className="lg:w-3/12 md:w-[20%] mt-4 lg:mt-0">
+          <div className="lg:w-[20%] md:w-[30%] w-full mt-4 lg:mt-0">
             <Button content="View all Projects" style={"p-2 w-full "} />
           </div>
         </div>
@@ -324,8 +324,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="banrow px-4">
-        <div className="container mx-auto text-center">
+      <section className="banrow px-4 ">
+        <div className="container mx-auto text-center w-[84%]">
           <div className="flex flex-row items-center justify-between border-[3px] border-[#fd0000] rounded-[20px] overflow-hidden relative h-[300px]">
             {/* Image Column */}
             <div className="banimgcol w-1/2 h-full">

@@ -200,7 +200,7 @@ const Footer = () => {
                 </a>
               </p>
               <p className="mt-4 underline flex justify-start items-center">
-                <FaPhoneAlt className="inline-block mr-2" />
+                {/* <FaPhoneAlt className="inline-block mr-2" /> */}
                 <FaEnvelope className="inline-block mr-2" />
                 <a
                   href="mailto:info@montdorinterior.com"
