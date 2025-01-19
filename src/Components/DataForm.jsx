@@ -33,7 +33,7 @@ const DataForm = () => {
   return (
     showForm && (
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-        <div className="bg-white p-8 rounded-lg shadow-lg h-[500px] w-[400px] relative">
+        <div className="bg-white p-8 rounded-lg shadow-lg h-[500px] w-[360px] relative">
           {/* Cancel Icon */}
           <button
             onClick={handleCancel}
