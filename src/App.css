@@ -38,7 +38,7 @@ body, html {
 
 /* Mobile Specific Styles */
 /* Mobile Specific Styles */
-@media (max-width: 768px) {
+@media (max-width: 984px) {
   .banner {
     max-height: 30%;
     height: 30%;

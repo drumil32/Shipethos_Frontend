@@ -76,15 +76,15 @@ const Home = () => {
 
   return (
     <>
-      <section className="banner md:h-full lg:h-[800px] flex flex-col md:flex-row justify-center items-center lg:justify-center lg:p-8 md:p-[20px]">
+      <section className="banner md:h-full lg:h-[800px] flex flex-col md:flex-row justify-center items-center lg:justify-center  md:p-[20px]">
         {/* Text Section with Background Image */}
-        <div className="subHeading text-section flex flex-col gap-2  md:h-auto lg:h-[70%] lg:w-1/2 lg:items-center lg:justify-center p-8">
+        <div className="subHeading text-section flex flex-col gap-2 md:h-auto lg:h-[70%] lg:w-1/2 lg:items-center lg:justify-center ">
           <article>
-            <h1 className="flex lg:gap-1 flex-col">
-              <span className="mobh1 lg:text-4xl text-[30px] text-wrap text-white bg-[#333333] font-bold w-fit p-1 uppercase">
+            <h1 className="flex lg:gap-1 gap-1 flex-col">
+              <span className="mobh1 lg:text-4xl text-[30px] text-wrap text-white bg-[#333333] font-bold w-fit p-1 uppercase inline-block">
                 Best Interior Designer
               </span>
-              <span className="mobcen lg:text-4xl text-[30px] text-white bg-[#fd0000] font-bold w-fit p-1 uppercase">
+              <span className="mobcen lg:text-4xl text-[30px] text-white bg-[#fd0000] font-bold w-fit p-1 uppercase inline-block">
                 in Ahmedabad
               </span>
             </h1>
