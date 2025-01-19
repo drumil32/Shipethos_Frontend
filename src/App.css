@@ -24,6 +24,50 @@ body, html {
 }
 
 
+
+.text-section {
+  background-image: url(''); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form-section {
+  background-color: white; /* Ensure the form stays white */
+}
+
+/* Mobile Specific Styles */
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+  .banner {
+    max-height: 30%;
+    height: 30%;
+    flex-direction: column; /* Stack content vertically */
+    padding: 0px;
+    background: transparent;
+  }
+
+  .text-section {
+    background-image: url('https://www.montdorinterior.com/wp-content/uploads/2024/05/montdor-banner.webp'); /* Optional: Add mobile-specific image */
+    background-size: cover;
+    background-position: center;
+    height: 60vh; /* Occupy 60% of the screen height */
+    padding: 1rem; /* Add padding for spacing */
+    display: flex; /* Center content vertically and horizontally */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form-section {
+    margin-top: 1rem;
+    width: 100%; /* Make form full width */
+    background-color: white;
+  }
+}
+
+
+
 .following-projects-row {
   overflow: hidden;
   height: 200px; /* Specify a fixed height */
@@ -73,4 +117,27 @@ body, html {
 .vendors_img .col2 img:hover {
   opacity: 1;
   filter: brightness(100%) saturate(10%) invert(28%) sepia(89%) saturate(522%) hue-rotate(330deg);
+}
+.following_client_slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.client-images-wrapper {
+  display: flex;
+  animation: scrollImages 20s linear infinite; /* Adjust the duration for scrolling speed */
+}
+
+.item {
+  flex-shrink: 0; /* Prevent the items from shrinking */
+  margin-right: 10px; /* Adjust spacing between images */
+}
+
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
 }

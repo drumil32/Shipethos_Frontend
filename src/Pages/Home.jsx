@@ -63,67 +63,36 @@ const Home = () => {
   ];
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length); // Loop back to the first item
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? items.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + items.length) % items.length
+    ); // Loop back to the last item
   };
 
   const handleSpeakToUsBTN = () => {};
 
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-
-    if (!slider) return; // Ensure slider exists
-
-    let scrollAmount = 0;
-
-    // Function to update maxScroll dynamically
-    const updateMaxScroll = () => {
-      return slider.scrollWidth - slider.clientWidth;
-    };
-
-    // Initial maxScroll value
-    let maxScroll = updateMaxScroll();
-    const scrollStep = maxScroll / 100; // Adjust scroll step for smoother scrolling
-
-    const scrollSlider = () => {
-      // Recalculate maxScroll in case the container size changes
-      maxScroll = updateMaxScroll();
-
-      if (scrollAmount < maxScroll) {
-        scrollAmount += scrollStep; // Increase scroll to the right
-        slider.scrollLeft = scrollAmount;
-        // console.log("Current ScrollLeft:", slider.scrollLeft); // For debugging
-      }
-    };
-
-    // Start scrolling
-    const interval = setInterval(scrollSlider, 100); // Adjust speed for smoother scrolling
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []); // The effect runs only once after the component mounts
-
   return (
     <>
-      <section className="banner h-[800px] flex flex-col md:flex-row justify-center items-center md:justify-center item-center lg:p-8 ">
+      <section className="banner md:h-full lg:h-[800px] flex flex-col md:flex-row justify-center items-center lg:justify-center lg:p-8 md:p-[20px]">
         {/* Text Section with Background Image */}
-        <div className="subHeading flex flex-col gap-2 w-full lg:w-1/2 p-8">
-          <p className="text-4xl text-white bg-slate-600 font-bold w-fit p-1 uppercase">
-            Best Interior Designer
-          </p>
-          <p className="text-4xl text-white bg-red-600 font-bold w-fit p-1 uppercase">
-            In Ahmedabad
-          </p>
+        <div className="subHeading text-section flex flex-col gap-2  md:h-auto lg:h-[70%] lg:w-1/2 lg:items-center lg:justify-center p-8">
+          <article>
+            <h1 className="flex lg:gap-1 flex-col">
+              <span className="mobh1 lg:text-4xl text-[30px] text-wrap text-white bg-[#333333] font-bold w-fit p-1 uppercase">
+                Best Interior Designer
+              </span>
+              <span className="mobcen lg:text-4xl text-[30px] text-white bg-[#fd0000] font-bold w-fit p-1 uppercase">
+                in Ahmedabad
+              </span>
+            </h1>
+          </article>
         </div>
 
         {/* Form Section */}
-        <div className="form flex flex-col sm:w-full md:w-1/2 gap-4 bg-white rounded-md p-12 mt-6 lg:mt-0 lg:w-1/3">
+        <div className="form form-section flex flex-col sm:w-full md:w-1/2 gap-4 bg-white rounded-md p-12 mt-6 lg:mt-0 lg:w-1/3">
           <h3 className="font-bold text-4xl text-center">
             Talk to our Design Expert
           </h3>
@@ -160,9 +129,9 @@ const Home = () => {
       </section>
 
       <section className="home-second md:p-[60px] px-4 py-[70px] h-full">
-        <div className="flex justify-evenly lg:gap-32 gap-6 lg:flex-row flex-col md:items-center items-start">
-          <div className="flex flex-col lg:w-[580px] leading-7 sm:w-full sm:text-center">
-            <p className="font-bold text-4xl text-[#333333] mb-3">
+        <div className="flex justify-evenly lg:gap-32 gap-6 lg:flex-row flex-col md:items-center">
+          <div className="flex flex-col lg:w-[580px] item-start leading-7 text-start w-full ">
+            <p className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full ">
               Elegant Functional Interiors
             </p>
             <p className="text-[15px] text-[#333333]">
@@ -188,10 +157,11 @@ const Home = () => {
       </section>
 
       <section className="home-three h-full">
-        <div className="lg:px-[160px] md:p-[60px] px-4 py-[70px] lg:py-[60px]">
+        {/* Top Section */}
+        <div className="lg:px-[160px] md:p-[60px] px-4 py-[70px] lg:p-[60px]">
           <div>
             <article>
-              <h2 className="font-bold text-4xl text-[#333333] mb-3 lg:w-[52%]">
+              <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full md:w-full lg:w-[66%]">
                 Why Choose Montdor Interior Designer in Ahmedabad?
               </h2>
               <p className="text-xl text-[#333333] mb-3">
@@ -201,31 +171,40 @@ const Home = () => {
             </article>
           </div>
         </div>
-        <div className="bg-[#f7f7f7] p-[8%]">
-          <div className="w-full">
+
+        {/* Items Section */}
+        <div className="bg-[#f7f7f7] p-4 sm:p-[6%] lg:p-[8%]">
+          <div className="">
             <div className="relative">
-              <div className="flex overflow-hidden gap-12">
-                {/* Display only 3 items at a time */}
-                {items
-                  .slice(currentIndex, currentIndex + 4)
-                  .map((item, index) => (
+              {/* Items Wrapper */}
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-300 ease-in-out gap-6"
+                  style={{
+                    transform: `translateX(-${currentIndex * (window.innerWidth >= 1024 ? 30 : 107)}%)`, // Applies 30% for lg/md, 100% for mobile
+                  }}
+                >
+                  {items.map((item, index) => (
                     <div
-                      key={index}
-                      className="bg-white rounded-md md:p-4 lg:w-[20%] lg:p-8  text-center gap-4 flex flex-col mx-2"
-                    >
-                      <h3 className="text-[#333] text-[20px] font-bold">
-                        {item.title}
-                      </h3>
-                      <p className="text-[14px] leading-relaxed text-[#333333] ">
-                        {item.description}
-                      </p>
-                    </div>
+                    key={index}
+                    className="bg-white rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[200px] flex-shrink-0 py-[50px]"
+                  >
+                    <h3 className="text-[#333] text-[30px] lg:text-[20px] font-bold">
+                      {item.title}
+                    </h3>
+                    <p className="lg:text-[14px] text-[20px] leading-relaxed text-[#333333]">
+                      {item.description}
+                    </p>
+                  </div>
+                  
                   ))}
+                </div>
               </div>
-              {/* Left and Right Arrows */}
+
+              {/* Navigation Arrows */}
               <button
                 onClick={goToPrevious}
-                className="absolute -left-10 top-1/2 transform -translate-y-1/2 text-white px-4 py-2"
+                className="absolute -left-4 sm:-left-10 top-1/2 transform -translate-y-1/2 text-white rounded-full px-3 py-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +218,7 @@ const Home = () => {
               </button>
               <button
                 onClick={goToNext}
-                className="absolute -right-10 top-1/2 transform -translate-y-1/2 text-white px-4 py-2"
+                className="absolute -right-4 sm:-right-10 top-1/2 transform -translate-y-1/2 text-white rounded-full px-3 py-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -260,18 +239,18 @@ const Home = () => {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:justify-between lg:flex-row items-center justify-between mb-12">
           <div className="lg:w-9/12">
-            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[52%]">
+            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[70%]">
               A little preview of Montdor Interior
             </h2>
             <p className="text-lg text-gray-700">
               Take a tour of the homes we’ve designed for our customers
             </p>
           </div>
-          <div className="lg:w-3/12 w-full mt-4 lg:mt-0">
-            <Button content="View all Projects" style={"p-2 w-full"} />
+          <div className="lg:w-3/12 md:w-[20%] mt-4 lg:mt-0">
+            <Button content="View all Projects" style={"p-2 w-full "} />
           </div>
         </div>
-        <div className="container  lg:px-4">
+        <div className="containe  lg:px-4">
           {/* Project Cards */}
           <div className="grid grid-cols-1  justify-self-center sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* First Project */}
@@ -343,24 +322,28 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="banrow px-4 ">
+      <section className="banrow px-4">
         <div className="container mx-auto text-center">
-          <div className="flex flex-col md:flex-row items-center justify-between border-[3px] border-[#fd0000] rounded-[20px] overflow-hidden relative">
+          <div className="flex flex-row items-center justify-between border-[3px] border-[#fd0000] rounded-[20px] overflow-hidden relative h-[300px]">
             {/* Image Column */}
-            <div className="banimgcol w-full md:w-1/2">
+            <div className="banimgcol w-1/2 h-full">
               <img
                 src="https://www.montdorinterior.com/wp-content/uploads/2023/09/home-banner.jpg"
                 alt="Modular kitchen in Ahmedabad"
-                className="w-full h-auto"
+                className="w-full h-full object-fill" // Ensures the entire image is visible
               />
             </div>
 
             {/* Content Column */}
-            <div className="bancontcol w-full md:w-1/2 mt-6 md:mt-0 flex justify-center flex-col text-left px-[4%] py-[2%] leading-relaxed">
-              <h3 className="banh3 text-[30px] font-bold mb-4">
+            <div className="bancontcol w-1/2 flex justify-center flex-col text-left px-[4%] py-[2%] leading-relaxed h-full">
+              <h3 className="banh3 text-[24px] sm:text-[30px] font-bold mb-4">
+                {" "}
+                {/* Adjusted size */}
                 Elegant Designs on a Budget
               </h3>
-              <p className="banp text-[17px] font-normal text-[#000] mb-4">
+              <p className="banp text-[14px] sm:text-[17px] font-normal text-[#000] mb-4">
+                {" "}
+                {/* Adjusted size */}
                 Calculate Your Modular Kitchen Cost
               </p>
               <p>
@@ -376,45 +359,48 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="following_projects page_sec md:p-[60px] px-6 py-[70px] lg:p-[60px]">
+      <section className="following_projects page_sec md:p-[60px] flex flex-col gap-12 px-6 py-[70px] lg:p-[60px]">
         <div className="container">
           <div className="row">
             <div className="col-md-7">
               <article>
-                <h2 className="font-bold text-4xl text-[#333333] mb-3 md:w-[60%] lg:w-[52%]">
+                <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[52%]">
                   Our Clients from Following Projects
                 </h2>
               </article>
             </div>
           </div>
         </div>
+
         <div className="following-projects-row">
           <div className="container">
-            <div className="following_client_slider" ref={sliderRef}>
-              {[...clientImages, ...clientImages].map((imageSrc, index) => (
-                <div key={index} className="item">
-                  <div className="padd_in">
-                    <span className="img_blk">
-                      <img
-                        className="client-img"
-                        width="280"
-                        height="160"
-                        src={imageSrc}
-                        alt={`Client ${index + 1}`}
-                      />
-                    </span>
+            <div className="following_client_slider">
+              <div className="client-images-wrapper">
+                {[...clientImages, ...clientImages].map((imageSrc, index) => (
+                  <div key={index} className="item ">
+                    <div className="padd_in h-full w-full">
+                      <span className="img_blk h-full">
+                        <img
+                          className="client-img"
+                          width="f" // Adjusted width
+                          height="120" // Adjusted height
+                          src={imageSrc}
+                          alt={`Client ${index + 1}`}
+                        />
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="vendors_sec page_sec px-4   lg:p-[80px]">
+      <section className="vendors_sec page_sec px-4   lg:p-[0px]">
         <div className="row a-item mb-8 md:px-[6%]">
           <div className="col-md-9">
-            <h2 className="font-bold  text-4xl text-[#333333] mb-3 w-[52%]">
+            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[52%]">
               Our Global Vendors
             </h2>
             <p className="text-lg mt-2 lg:w-[52%]">
@@ -581,7 +567,7 @@ const Home = () => {
 
       <section className="cal_to_action md:p-[70px] px-4 py-[60px] lg:p-[80px]">
         <div className=" bg-white ">
-          <h2 className="font-bold text-[25px] md:text-[35px] text-[#333333] mb-[18px] ">
+          <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[79%]">
             Unlock Doors to Your Dream Home with #1 Interior Designers in
             Ahmedabad!
           </h2>
@@ -620,7 +606,7 @@ const Home = () => {
               . Let’s turn your space into something truly unique together!
             </p>
 
-            <h2 className="font-bold text-[25px] md:text-[35px] text-[#333333] mb-[18px] ">
+            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[79%]">
               Unique Interior Designer in Ahmedabad for Unique Homes
             </h2>
             <p className="mb-4 text-[15px] font-normal">
@@ -638,7 +624,7 @@ const Home = () => {
               If you’re seeking a 1bhk, 2bhk, 3bhk interior designer in
               Ahmedabad with a mesmerizing artistic style, the search ends here.
             </p>
-            <h2 className="font-bold text-[25px] md:text-[35px] text-[#333333] mb-[18px] ">
+            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[79%]">
               Why pick our interior design firm?
             </h2>
             <p className="mb-4 text-[15px] font-normal">
@@ -654,8 +640,8 @@ const Home = () => {
             </p>
           </div>
 
-          <Button onClick={toggleReadMore} content={"Read More"}>
-            {isReadMore ? "Read Less" : "Read More"}
+          <Button onClick={toggleReadMore} content={isReadMore ? "Read Less" : "Read More"}>
+            
           </Button>
         </div>
       </section>

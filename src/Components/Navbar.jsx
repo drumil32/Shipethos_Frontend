@@ -33,11 +33,21 @@ const Navbar = () => {
         {/* Desktop View */}
         <div className="right hidden lg:flex justify-center items-center gap-4">
           <div className="options-container item-center flex justify-evenly gap-8 h-full">
-            {["/", "/about-us", "/work", "/products", "/services", "/franchise", "/pricing"].map((link) => (
+            {[
+              "/",
+              "/about-us",
+              "/work",
+              "/products",
+              "/services",
+              "/franchise",
+              "/pricing",
+            ].map((link) => (
               <Link
                 key={link}
                 to={link}
-                className={`text-[#333333] relative group ${activeLink === link ? "active-link" : ""}`}
+                className={`text-[#333333] relative group ${
+                  activeLink === link ? "active-link" : ""
+                }`}
               >
                 {link === "/" ? "Home" : link.split("/")[1].replace("-", " ")}
                 {/* Animated Bottom Border */}
@@ -79,12 +89,26 @@ const Navbar = () => {
 
       {/* Hamburger Menu Links */}
       {isMenuOpen && (
-        <div className="lg:hidden flex flex-col items-center bg-[#ffffff] mt-2 py-4">
-          {["/", "/about-us", "/work", "/products", "/services", "/franchise", "/pricing"].map((link) => (
+        <div
+          className={`lg:hidden flex flex-col items-center bg-[#ffffff] mt-2 py-4 transform transition-all duration-300 ease-in-out ${
+            isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
+          {[
+            "/",
+            "/about-us",
+            "/work",
+            "/products",
+            "/services",
+            "/franchise",
+            "/pricing",
+          ].map((link) => (
             <Link
               key={link}
               to={link}
-              className={`text-[#333333] py-2 relative group ${activeLink === link ? "active-link" : ""}`}
+              className={`text-[#333333] py-2 relative group ${
+                activeLink === link ? "active-link" : ""
+              }`}
             >
               {link === "/" ? "Home" : link.split("/")[1].replace("-", " ")}
               {/* Animated Bottom Border */}
