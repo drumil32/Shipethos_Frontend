@@ -181,22 +181,23 @@ const Home = () => {
                 <div
                   className="flex transition-transform duration-300 ease-in-out gap-6"
                   style={{
-                    transform: `translateX(-${currentIndex * (window.innerWidth >= 1024 ? 30 : 107)}%)`, // Applies 30% for lg/md, 100% for mobile
+                    transform: `translateX(-${
+                      currentIndex * (window.innerWidth >= 1024 ? 30 : 107)
+                    }%)`, // Applies 30% for lg/md, 100% for mobile
                   }}
                 >
                   {items.map((item, index) => (
                     <div
-                    key={index}
-                    className="bg-white rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[200px] flex-shrink-0 py-[50px]"
-                  >
-                    <h3 className="text-[#333] text-[30px] lg:text-[20px] font-bold">
-                      {item.title}
-                    </h3>
-                    <p className="lg:text-[14px] text-[20px] leading-relaxed text-[#333333]">
-                      {item.description}
-                    </p>
-                  </div>
-                  
+                      key={index}
+                      className="bg-white rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[200px] flex-shrink-0 py-[50px]"
+                    >
+                      <h3 className="text-[#333] text-[30px] lg:text-[20px] font-bold">
+                        {item.title}
+                      </h3>
+                      <p className="lg:text-[14px] text-[20px] leading-relaxed text-[#333333]">
+                        {item.description}
+                      </p>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -235,7 +236,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="interior_sec page_sec md:p-[40px] px-4 py-[70px] lg:p-[60px] ">
+      <section className="interior_sec page_sec md:p-[40px] px-4 py-[70px] lg:p-[60px]">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:justify-between lg:flex-row items-center justify-between mb-12">
           <div className="lg:w-9/12">
@@ -250,13 +251,14 @@ const Home = () => {
             <Button content="View all Projects" style={"p-2 w-full "} />
           </div>
         </div>
-        <div className="containe  lg:px-4">
+
+        <div className="containe lg:px-4">
           {/* Project Cards */}
-          <div className="grid grid-cols-1  justify-self-center sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {/* First Project */}
-            <div className="col-span-1 w-[300px] h-[300px] lg:h-[500px]">
+            <div className="col-span-1 w-full h-[500px] lg:h-[500px]">
               <div
-                className="padd_in bg-cover bg-center w-full h-full  rounded-lg relative"
+                className="padd_in bg-cover bg-center w-full h-full rounded-lg relative"
                 style={{
                   backgroundImage:
                     "url('https://www.montdorinterior.com/wp-content/uploads/2024/04/sky-city-vernis-luxury-bungalow-home-banner.webp')",
@@ -276,9 +278,9 @@ const Home = () => {
             </div>
 
             {/* Second Project */}
-            <div className="col-span-1 w-[300px] h-[300px] lg:h-[500px]">
+            <div className="col-span-1 w-full h-[500px] lg:h-[500px]">
               <div
-                className="padd_in bg-cover bg-center w-full h-full  rounded-lg relative"
+                className="padd_in bg-cover bg-center w-full h-full rounded-lg relative"
                 style={{
                   backgroundImage:
                     "url('https://www.montdorinterior.com/wp-content/uploads/2024/04/aarya-bhumi-4bhk-standard-turnkey-interior-design-project-in-ahmedabad-banner.webp')",
@@ -298,9 +300,9 @@ const Home = () => {
             </div>
 
             {/* Third Project */}
-            <div className="col-span-1 w-[300px] h-[300px] lg:h-[500px]">
+            <div className="col-span-1 w-full h-[500px] lg:h-[500px]">
               <div
-                className="padd_in bg-cover bg-center w-full h-full  rounded-lg relative"
+                className="padd_in bg-cover bg-center w-full h-full rounded-lg relative"
                 style={{
                   backgroundImage:
                     "url('https://www.montdorinterior.com/wp-content/uploads/2024/04/daisy-amrakunj-4bhk-premium-turnkey-interior-design-project-in-ahmedabad-banner.webp')",
@@ -640,9 +642,10 @@ const Home = () => {
             </p>
           </div>
 
-          <Button onClick={toggleReadMore} content={isReadMore ? "Read Less" : "Read More"}>
-            
-          </Button>
+          <Button
+            onClick={toggleReadMore}
+            content={isReadMore ? "Read Less" : "Read More"}
+          ></Button>
         </div>
       </section>
     </>
