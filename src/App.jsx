@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from './Pages/Home';
-import About from './Pages/About';
+import Projects from './Pages/Projects';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import DataForm from './Components/DataForm';  // Import the DataForm component
@@ -14,11 +14,11 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/projects' element={<Projects />} />
       </Routes>
       <Footer />
       <FloatingIcons />
-      <DataForm /> {/* Include the DataForm component */}
+      <DataForm />
     </Router>
   );
 };

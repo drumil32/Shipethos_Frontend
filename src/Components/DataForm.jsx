@@ -9,7 +9,6 @@ const DataForm = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Show the form if the page reloads and if it's on specific routes
     if (location.pathname === '/' || location.pathname === '/about') {
       setShowForm(true);
     }
@@ -23,64 +22,65 @@ const DataForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted with data:', formData);
-    setShowForm(false); // Hide the form after submission
+    setShowForm(false);
   };
 
   const handleCancel = () => {
-    setShowForm(false); // Hide the form on cancel
+    setShowForm(false);
   };
 
   return (
     showForm && (
-      <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-        <div className="bg-white p-8 rounded-lg shadow-lg h-[500px] w-[360px] relative">
+      <div className=" fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50">
+        <div className="dataFrom bg-gradient-to-br from-white to-gray-100 p-8 rounded-lg shadow-xl h-[500px] w-[360px] relative">
           {/* Cancel Icon */}
           <button
             onClick={handleCancel}
-            className="absolute top-2 right-2 text-xl text-gray-500 hover:text-gray-800"
+            className="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-600 transition-all"
           >
-            <AiOutlineClose /> {/* Font Awesome icon */}
+            <AiOutlineClose />
           </button>
-          <h2 className="text-4xl font-semibold mb-4">Quick Contact</h2>
-          <form onSubmit={handleSubmit} className='flex flex-col justify-center gap-4'>
+          <h2 className="text-3xl font-bold mb-6 text-gray-800 " >Quick Contact</h2>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="form_input text-black placeholder-black border border-zinc-400 rounded-md px-4 py-2 focus:outline-none resize-none"
-              placeholder='Full Name'
+              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500"
+              placeholder="Full Name"
             />
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="form_input text-black placeholder-black border border-zinc-400 rounded-md px-4 py-2 focus:outline-none resize-none"
-              placeholder='Email'
+              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500"
+              placeholder="Email"
             />
             <input
               type="tel"
               name="phonenumber"
               value={formData.phone}
               onChange={handleChange}
-              className="form_input text-black placeholder-black border border-zinc-400 rounded-md px-4 py-2 focus:outline-none resize-none"
-              placeholder='Phone or WhatsApp Number'
+              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500"
+              placeholder="Phone or WhatsApp Number"
             />
             <input
               type="text"
               name="city"
               value={formData.city}
               onChange={handleChange}
-              className="form_input text-black placeholder-black border border-zinc-400 rounded-md px-4 py-2 focus:outline-none resize-none"
-              placeholder='City'
+              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500"
+              placeholder="City"
             />
             <textarea
               placeholder="Share your Requirement"
-              className="form_input text-black placeholder-black border border-zinc-400 rounded-md px-4 py-2 focus:outline-none resize-none"
+              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500 resize-none"
+              rows={3}
             ></textarea>
             <div className="flex justify-between">
-              <Button content={"Send"} style={"w-full"} />
+              <Button content="Send" style="bg-blue-500 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-600 transition-all w-full" />
             </div>
           </form>
         </div>

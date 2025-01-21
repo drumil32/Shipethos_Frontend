@@ -31,21 +31,16 @@ const Navbar = () => {
         </div>
 
         {/* Desktop View */}
-        <div className="right hidden lg:flex justify-center items-center gap-4">
+        <div className="right hidden w-1/3 lg:flex justify-between items-center gap-4">
           <div className="options-container item-center flex justify-evenly gap-8 h-full">
             {[
               "/",
-              "/about-us",
-              "/work",
-              "/products",
-              "/services",
-              "/franchise",
-              "/pricing",
+              "/projects",
             ].map((link) => (
               <Link
                 key={link}
                 to={link}
-                className={`text-[#333333] relative group ${
+                className={`text-[#333333] relative group capitalize ${
                   activeLink === link ? "active-link" : ""
                 }`}
               >
@@ -96,17 +91,12 @@ const Navbar = () => {
         >
           {[
             "/",
-            "/about-us",
-            "/work",
-            "/products",
-            "/services",
-            "/franchise",
-            "/pricing",
+            "/projects",
           ].map((link) => (
             <Link
               key={link}
               to={link}
-              className={`text-[#333333] py-2 relative group ${
+              className={`text-[#333333] py-2 relative capitalize group ${
                 activeLink === link ? "active-link" : ""
               }`}
             >
