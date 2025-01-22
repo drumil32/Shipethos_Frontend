@@ -148,14 +148,14 @@ const Projects = () => {
         secondHeadingStyle={"bg-transparent capitalize"}
       />
 
-      <section className="h-fit w-full">
+      <section className="h-fit w-full bg-[#FBF8EF]">
         <div className="container p-8 h-full w-full flex justify-center flex-col m-auto">
           <div className="heading m-3">
-            <p className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full">
+            <p className="font-bold text-[1.7rem] md:text-4xl text-[#333333] m-auto w-4/5">
               Interior Design Projects Completed by Montdor Interior
             </p>
           </div>
-          <div className="showcase w-full flex justify-center">
+          <div className="showcase w-3/4 m-auto flex justify-center">
             <div className="allCards  gap-5 grid sm:grid-cols-3 grid-cols-1">
               {data?.map((i) => (
                 <Card image={i.imageUrl} description={i.title} />

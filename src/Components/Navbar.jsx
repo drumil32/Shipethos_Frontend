@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation(); // To track the current URL and determine the active link
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [dropdownTimeout, setDropdownTimeout] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleBTN = () => {};
 
@@ -12,15 +15,32 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const [activeLink, setActiveLink] = useState("/"); // Default active link is Home
+  const [activeLink, setActiveLink] = useState("/");
 
-  // UseEffect to handle changes in URL and active link
   useEffect(() => {
-    setActiveLink(location.pathname); // Set the active link based on the current route
+    setActiveLink(location.pathname);
   }, [location]);
 
+  const handleDelayedNavigation = (path) => {
+    setTimeout(() => {
+      navigate(path);
+    }, 1000); // 1 second delay
+  };
+
+  const handleMouseEnter = () => {
+    clearTimeout(dropdownTimeout);
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 300); // 2 seconds
+    setDropdownTimeout(timeout);
+  };
+
   return (
-    <div className="h-[10%] bg-[#ffffff] p-6">
+    <div className="h-[10%] bg-[#FBF8EF] p-6">
       <nav className="h-full w-full flex lg:justify-evenly justify-between items-center flex-wrap">
         <div className="logo-container">
           <img
@@ -31,33 +51,67 @@ const Navbar = () => {
         </div>
 
         {/* Desktop View */}
-        <div className="right hidden w-1/3 lg:flex justify-between items-center gap-4">
-          <div className="options-container item-center flex justify-evenly gap-8 h-full">
+        <div className="right hidden w-1/3 lg:flex justify-around items-center gap-4">
+          <div className="options-container flex justify-evenly gap-8 h-full">
             {[
-              "/",
-              "/projects",
+              { path: "/", label: "Home" },
+              {
+                path: "/work",
+                label: "Work",
+                dropdown: [{ path: "/projects", label: "Projects" }],
+              },
             ].map((link) => (
-              <Link
-                key={link}
-                to={link}
-                className={`text-[#333333] relative group capitalize ${
-                  activeLink === link ? "active-link" : ""
-                }`}
+              <div
+                key={link.path}
+                className="relative group"
+                onMouseEnter={link.dropdown ? handleMouseEnter : undefined}
+                onMouseLeave={link.dropdown ? handleMouseLeave : undefined}
+              
               >
-                {link === "/" ? "Home" : link.split("/")[1].replace("-", " ")}
-                {/* Animated Bottom Border */}
                 <span
-                  className={`absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full group-hover:left-0 ${
-                    activeLink === link ? "w-full left-0" : ""
-                  }`}
-                ></span>
-              </Link>
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleDelayedNavigation(link.path);
+                  }}
+                  className={`text-[#333333] text-xl font-semibold cursor-pointer relative capitalize`}
+                >
+                  {link.label}
+                  {/* Bottom Border Animation */}
+                  <span
+                    className={`absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full`}
+                  ></span>
+                </span>
+
+                {/* Dropdown Menu */}
+                {link.dropdown && (
+                  <div
+                    className={`absolute left-0 mt-10 bg-[#FBF8EF] shadow-md hover:bg-red-100 rounded-md w-40 transition-all duration-300 ${
+                      isDropdownOpen
+                        ? "opacity-100 visible"
+                        : "opacity-0 invisible"
+                    }`}
+                  >
+                    {link.dropdown.map((item) => (
+                      <span
+                        key={item.path}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleDelayedNavigation(item.path);
+                        }}
+                        className="block px-4 py-2 text-[#333333] cursor-pointer "
+                      >
+                        {item.label}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
           <Button content={"Book a Consultation"} onClick={handleBTN} />
         </div>
 
-        {/* Mobile View: Hamburger Menu */}
+        {/* Mobile View */}
         <div className="lg:hidden flex items-center">
           <button
             onClick={toggleMenu}
@@ -81,37 +135,6 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-
-      {/* Hamburger Menu Links */}
-      {isMenuOpen && (
-        <div
-          className={`lg:hidden flex flex-col items-center bg-[#ffffff] mt-2 py-4 transform transition-all duration-300 ease-in-out ${
-            isMenuOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
-        >
-          {[
-            "/",
-            "/projects",
-          ].map((link) => (
-            <Link
-              key={link}
-              to={link}
-              className={`text-[#333333] py-2 relative capitalize group ${
-                activeLink === link ? "active-link" : ""
-              }`}
-            >
-              {link === "/" ? "Home" : link.split("/")[1].replace("-", " ")}
-              {/* Animated Bottom Border */}
-              <span
-                className={`absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full group-hover:left-0 ${
-                  activeLink === link ? "w-full left-0" : ""
-                }`}
-              ></span>
-            </Link>
-          ))}
-          <Button content={"Book a Consultation"} onClick={handleBTN} />
-        </div>
-      )}
     </div>
   );
 };

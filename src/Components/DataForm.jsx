@@ -36,7 +36,7 @@ const DataForm = () => {
           {/* Cancel Icon */}
           <button
             onClick={handleCancel}
-            className="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-600 transition-all"
+            className="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-600 hover:border-[2px] border-[#fd0000b9] rounded-2xl transition-all"
           >
             <AiOutlineClose />
           </button>
@@ -47,7 +47,7 @@ const DataForm = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500"
+              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500"
               placeholder="Full Name"
             />
             <input
@@ -55,7 +55,7 @@ const DataForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500"
+              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500"
               placeholder="Email"
             />
             <input
@@ -63,7 +63,7 @@ const DataForm = () => {
               name="phonenumber"
               value={formData.phone}
               onChange={handleChange}
-              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500"
+              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500"
               placeholder="Phone or WhatsApp Number"
             />
             <input
@@ -71,16 +71,16 @@ const DataForm = () => {
               name="city"
               value={formData.city}
               onChange={handleChange}
-              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500"
+              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500"
               placeholder="City"
             />
             <textarea
               placeholder="Share your Requirement"
-              className="form_input bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500 resize-none"
+              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500 resize-none"
               rows={3}
             ></textarea>
             <div className="flex justify-between">
-              <Button content="Send" style="bg-blue-500 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-600 transition-all w-full" />
+              <Button content="Send" style="bg-red-500 text-white font-medium px-4 py-2 rounded-lg hover:bg-red-600 transition-all w-full" />
             </div>
           </form>
         </div>

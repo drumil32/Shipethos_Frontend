@@ -23,7 +23,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://www.facebook.com/MONTDORPL/"
-                  className="bg-red-500 p-3 rounded-full text-white flex items-center justify-center"
+                  className="bg-[#ff0000] p-3 rounded-full text-white flex items-center justify-center"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Like us on Facebook"
@@ -34,7 +34,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://www.instagram.com/montdorinterior/"
-                  className="bg-red-500 p-3 rounded-full text-white flex items-center justify-center"
+                  className="bg-[#ff0000] p-3 rounded-full text-white flex items-center justify-center"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Follow Us on Instagram"
@@ -45,7 +45,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://www.youtube.com/c/MontdorInteriorPrivateLimited"
-                  className="bg-red-500 p-3 rounded-full text-white flex items-center justify-center"
+                  className="bg-[#ff0000] p-3 rounded-full text-white flex items-center justify-center"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Subscribe us on Youtube"
@@ -187,7 +187,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="w-full md:w-1/3 lg:w-1/6 mb-6">
+          <div className="w-full md:w-1/3 lg:w-1/6 mb-6"> 
             <div className="contact_fo">
               <h3 className="text-xl font-semibold mb-4">Get in touch</h3>
               <p className="mt-4 underline flex justify-start item-center">

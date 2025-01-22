@@ -79,7 +79,9 @@ const Home = () => {
     <>
       <HeroFrame func={handleSpeakToUsBTN}/>
 
-      <section className="home-second md:p-[60px] px-4 py-[70px] h-full">
+      <section className="home-second ">
+        <div className="home-second-inner md:p-[60px] px-4 py-[70px] h-full">
+
         <div className="flex justify-evenly lg:gap-32 gap-6 lg:flex-row  flex-col md:items-center">
           <div className="flex flex-col lg:w-[580px] item-start leading-7 text-start w-full ">
             <p className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full ">
@@ -105,9 +107,11 @@ const Home = () => {
             <Button content={"Talk to our designer"} style={"p-4"} />
           </div>
         </div>
+        </div>
+
       </section>
 
-      <section className="home-three h-full">
+      <section className="home-three h-full bg-[#FBF8EF]">
         {/* Top Section */}
         <div className="lg:px-[160px] md:p-[60px] px-4 py-[70px] lg:p-[60px]">
           <div>
@@ -124,8 +128,8 @@ const Home = () => {
         </div>
 
         {/* Items Section */}
-        <div className="bg-[#f7f7f7] p-4 sm:p-[6%] lg:p-[8%]">
-          <div className="">
+        <div className=" scrollber bg-[#ffffff] ">
+          <div className=" bg-[#FBF8EF2b] p-4 sm:p-[6%] lg:p-[8%]">
             <div className="relative">
               {/* Items Wrapper */}
               <div className="overflow-hidden">
@@ -140,7 +144,7 @@ const Home = () => {
                   {items.map((item, index) => (
                     <div
                       key={index}
-                      className="bg-white rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[300px] flex-shrink-0 py-[50px]"
+                      className="bg-[#FBF8EF] rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[300px] flex-shrink-0 py-[50px]"
                     >
                       <h3 className="text-[#333] text-[30px] lg:text-[20px] font-bold">
                         {item.title}
@@ -187,7 +191,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="interior_sec page_sec md:p-[60px] px-4 py-[70px] lg:p-[80px]">
+      <section className="interior_sec page_sec md:p-[60px] px-4 py-[70px] lg:p-[80px] bg-[#FBF8EF]">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:justify-between lg:flex-row items-center justify-between mb-12">
           <div className="lg:w-9/12">
@@ -275,7 +279,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="banrow px-4 ">
+      <section className="banrow px-4 bg-[#FBF8EF]">
         <div className="container mx-auto text-center w-[84%]">
           <div className="flex flex-row items-center justify-between border-[3px] border-[#fd0000] rounded-[20px] overflow-hidden relative h-[300px]">
             {/* Image Column */}
@@ -288,14 +292,12 @@ const Home = () => {
             </div>
 
             {/* Content Column */}
-            <div className="bancontcol w-1/2 flex justify-center flex-col text-left px-[4%] py-[2%] leading-relaxed h-full">
+            <div className="bancontcol w-1/2 flex justify-center bg-white flex-col text-left px-[4%] py-[2%] leading-relaxed h-full">
               <h3 className="banh3 text-[24px] sm:text-[30px] font-bold mb-4">
-                {" "}
                 {/* Adjusted size */}
                 Elegant Designs on a Budget
               </h3>
               <p className="banp text-[14px] sm:text-[17px] font-normal text-[#000] mb-4">
-                {" "}
                 {/* Adjusted size */}
                 Calculate Your Modular Kitchen Cost
               </p>
@@ -312,7 +314,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="following_projects page_sec md:p-[60px] flex flex-col gap-12 px-6 py-[70px] lg:p-[60px]">
+      <section className="following_projects page_sec md:p-[60px] flex flex-col gap-12 px-6 py-[70px] lg:p-[60px] bg-[#FBF8EF]">
         <div className="container">
           <div className="row">
             <div className="col-md-7">
@@ -331,7 +333,7 @@ const Home = () => {
               <div className="client-images-wrapper">
                 {[...clientImages, ...clientImages].map((imageSrc, index) => (
                   <div key={index} className="item ">
-                    <div className="padd_in h-full w-full">
+                    <div className="padd_in h-full w-full ">
                       <span className="img_blk h-full">
                         <img
                           className="client-img"
@@ -350,7 +352,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="vendors_sec page_sec px-4 pb-[41px]  lg:p-[0px]">
+      <section className="vendors_sec page_sec px-4 pb-[41px]  lg:p-[0px] bg-[#FBF8EF]">
         <div className="row a-item mb-8 md:px-[6%]">
           <div className="col-md-9">
             <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[52%]">
@@ -518,8 +520,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="cal_to_action md:p-[70px] px-4 py-[60px] lg:p-[80px]">
-        <div className=" bg-white ">
+      <section className="cal_to_action md:p-[70px] px-4 py-[60px] lg:p-[80px] bg-[#FBF8EF]">
+        <div className=" bg-[#FBF8EF]  ">
           <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[79%]">
             Unlock Doors to Your Dream Home with #1 Interior Designers in
             Ahmedabad!
