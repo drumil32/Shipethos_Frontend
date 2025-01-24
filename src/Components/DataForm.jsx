@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import Button from './Button';
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 
 const DataForm = () => {
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', city: '' });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    city: "",
+  });
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === '/' || location.pathname === '/about') {
+    if (location.pathname === "/" || location.pathname === "/about") {
       setShowForm(true);
     }
   }, [location]);
@@ -21,7 +25,7 @@ const DataForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted with data:', formData);
+    console.log("Form submitted with data:", formData);
     setShowForm(false);
   };
 
@@ -31,23 +35,33 @@ const DataForm = () => {
 
   return (
     showForm && (
-      <div className=" fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50">
-        <div className="dataFrom bg-gradient-to-br from-white to-gray-100 p-8 rounded-lg shadow-xl h-[500px] w-[360px] relative">
-          {/* Cancel Icon */}
+      <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+        {/* Form Container */}
+        <div
+          className="relative bg-gradient-to-br from-[#ff0000c9] to-transparent p-8 rounded-xl shadow-2xl 
+          w-[380px] h-auto flex flex-col gap-5  animate-throw-card"
+        >
+          {/* Close Button */}
           <button
             onClick={handleCancel}
-            className="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-600 hover:border-[2px] border-[#fd0000b9] rounded-2xl transition-all"
+            className="absolute top-4 right-4 text-2xl text-white bg-[#e11515] p-2 rounded-full shadow-md 
+            hover:bg-[#f00] transition-transform transform hover:scale-110"
           >
             <AiOutlineClose />
           </button>
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 " >Quick Contact</h2>
+
+          {/* Form Header */}
+          <h2 className="text-3xl font-bold text-white text-center">Contact Us</h2>
+
+          {/* Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500"
+              className="form_input rounded-md px-4 py-2 bg-black text-white border border-red-500 
+              focus:outline-none focus:ring-2 focus:ring-red-600 placeholder-gray-300"
               placeholder="Full Name"
             />
             <input
@@ -55,15 +69,17 @@ const DataForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500"
+              className="form_input rounded-md px-4 py-2 bg-black text-white border border-red-500 
+              focus:outline-none focus:ring-2 focus:ring-red-600 placeholder-gray-300"
               placeholder="Email"
             />
             <input
               type="tel"
-              name="phonenumber"
+              name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500"
+              className="form_input rounded-md px-4 py-2 bg-black text-white border border-red-500 
+              focus:outline-none focus:ring-2 focus:ring-red-600 placeholder-gray-300"
               placeholder="Phone or WhatsApp Number"
             />
             <input
@@ -71,16 +87,30 @@ const DataForm = () => {
               name="city"
               value={formData.city}
               onChange={handleChange}
-              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500"
+              className="form_input rounded-md px-4 py-2 bg-black text-white border border-red-500 
+              focus:outline-none focus:ring-2 focus:ring-red-600 placeholder-gray-300"
               placeholder="City"
             />
             <textarea
               placeholder="Share your Requirement"
-              className="form_input  border border-red-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-800 placeholder-gray-500 resize-none"
+              className="form_input rounded-md px-4 py-2 bg-black text-white border border-red-500 
+              focus:outline-none focus:ring-2 focus:ring-red-600 placeholder-gray-300 resize-none"
               rows={3}
             ></textarea>
-            <div className="flex justify-between">
-              <Button content="Send" style="bg-red-500 text-white font-medium px-4 py-2 rounded-lg hover:bg-red-600 transition-all w-full" />
+
+            {/* Action Buttons */}
+            <div className="flex justify-between gap-4">
+              {/* Cancel Button with Icon */}
+              
+
+              {/* Send Button */}
+              <button
+                type="submit"
+                className="w-full bg-[#e11515] text-white font-bold py-2 rounded-md shadow-md 
+                hover:bg-[#f00] transition-transform transform hover:scale-105"
+              >
+                Send
+              </button>
             </div>
           </form>
         </div>

@@ -84,10 +84,10 @@ const Home = () => {
 
         <div className="flex justify-evenly lg:gap-32 gap-6 lg:flex-row  flex-col md:items-center">
           <div className="flex flex-col lg:w-[580px] item-start leading-7 text-start w-full ">
-            <p className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full ">
+            <p className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full ">
               Elegant Functional Interiors
             </p>
-            <p className="text-[15px] text-[#333333]">
+            <p className="text-[15px] text-[#212121]">
               Montdor Interior combines style and functionality to craft spaces
               tailored to your needs. As one of the{" "}
               <strong>best interior designers in Ahmedabad</strong>, we deliver{" "}
@@ -116,10 +116,10 @@ const Home = () => {
         <div className="lg:px-[160px] md:p-[60px] px-4 py-[70px] lg:p-[60px]">
           <div>
             <article>
-              <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full md:w-full lg:w-[66%]">
+              <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full md:w-full lg:w-[66%]">
                 Why Choose Montdor Interior Designer in Ahmedabad?
               </h2>
-              <p className="text-xl text-[#333333] mb-3">
+              <p className="text-xl text-[#212121] mb-3">
                 Here are some of the reasons our clients say they continue to
                 work with us.
               </p>
@@ -137,14 +137,14 @@ const Home = () => {
                   className="flex transition-transform duration-300 ease-in-out gap-6"
                   style={{
                     transform: `translateX(-${
-                      currentIndex * (window.innerWidth >= 1024 ? 20 : window.innerWidth >=795 && window.innerWidth <=1024  ? 30 : 106)
+                      currentIndex * (window.innerWidth >= 1024 ? 20 : window.innerWidth >=795 && window.innerWidth <=1024  ? 30 : 106.3)
                     }%)`, // Applies 30% for lg/md, 100% for mobile
                   }}
                 >
                   {items.map((item, index) => (
                     <div
                       key={index}
-                      className="bg-[#FBF8EF] rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[300px] flex-shrink-0 py-[50px]"
+                      className="bg-[#FBF8EF] border-2 border-[#B82132] rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[300px] flex-shrink-0 py-[50px]"
                     >
                       <h3 className="text-[#333] text-[30px] lg:text-[20px] font-bold">
                         {item.title}
@@ -195,7 +195,7 @@ const Home = () => {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:justify-between lg:flex-row items-center justify-between mb-12">
           <div className="lg:w-9/12">
-            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[70%]">
+            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[70%]">
               A little preview of Montdor Interior
             </h2>
             <p className="text-lg text-gray-700">
@@ -281,7 +281,7 @@ const Home = () => {
 
       <section className="banrow px-4 bg-[#FBF8EF]">
         <div className="container mx-auto text-center w-[84%]">
-          <div className="flex flex-row items-center justify-between border-[3px] border-[#fd0000] rounded-[20px] overflow-hidden relative h-[300px]">
+          <div className="flex flex-row items-center justify-between border-[3px] border-[#B82132] rounded-[20px] overflow-hidden relative h-[300px]">
             {/* Image Column */}
             <div className="banimgcol w-1/2 h-full">
               <img
@@ -319,7 +319,7 @@ const Home = () => {
           <div className="row">
             <div className="col-md-7">
               <article>
-                <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[52%]">
+                <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[52%]">
                   Our Clients from Following Projects
                 </h2>
               </article>
@@ -355,7 +355,7 @@ const Home = () => {
       <section className="vendors_sec page_sec px-4 pb-[41px]  lg:p-[0px] bg-[#FBF8EF]">
         <div className="row a-item mb-8 md:px-[6%]">
           <div className="col-md-9">
-            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[52%]">
+            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[52%]">
               Our Global Vendors
             </h2>
             <p className="text-lg mt-2 lg:w-[52%]">
@@ -522,7 +522,7 @@ const Home = () => {
 
       <section className="cal_to_action md:p-[70px] px-4 py-[60px] lg:p-[80px] bg-[#FBF8EF]">
         <div className=" bg-[#FBF8EF]  ">
-          <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[79%]">
+          <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[79%]">
             Unlock Doors to Your Dream Home with #1 Interior Designers in
             Ahmedabad!
           </h2>
@@ -561,7 +561,7 @@ const Home = () => {
               . Let’s turn your space into something truly unique together!
             </p>
 
-            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[79%]">
+            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[79%]">
               Unique Interior Designer in Ahmedabad for Unique Homes
             </h2>
             <p className="mb-4 text-[15px] font-normal">
@@ -579,7 +579,7 @@ const Home = () => {
               If you’re seeking a 1bhk, 2bhk, 3bhk interior designer in
               Ahmedabad with a mesmerizing artistic style, the search ends here.
             </p>
-            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#333333] mb-3 w-full lg:w-[79%]">
+            <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[79%]">
               Why pick our interior design firm?
             </h2>
             <p className="mb-4 text-[15px] font-normal">

@@ -144,12 +144,11 @@ const Projects = () => {
       <HeroFrame
         heading={"Projects"}
         secondHeading={"Home / Projects"}
-        headingStyle={"bg-[#fd0000]"}
-        secondHeadingStyle={"bg-transparent capitalize"}
+        secondHeadingStyle={"capitalize"}
       />
 
       <section className="h-fit w-full bg-[#FBF8EF]">
-        <div className="container p-8 h-full w-full flex justify-center flex-col m-auto">
+        <div className="container lg:p-8 p-2 h-full w-full flex justify-center flex-col m-auto">
           <div className="heading m-3">
             <p className="font-bold text-[1.7rem] md:text-4xl text-[#333333] m-auto w-4/5">
               Interior Design Projects Completed by Montdor Interior

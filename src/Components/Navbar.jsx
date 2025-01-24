@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [dropdownTimeout, setDropdownTimeout] = useState(null);
+  const [isDropdownOpenMobile, setIsDropdownOpenMobile] = useState(null); // Track which dropdown is open
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -24,24 +23,12 @@ const Navbar = () => {
   const handleDelayedNavigation = (path) => {
     setTimeout(() => {
       navigate(path);
-    }, 1000); // 1 second delay
-  };
-
-  const handleMouseEnter = () => {
-    clearTimeout(dropdownTimeout);
-    setIsDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setIsDropdownOpen(false);
-    }, 300); // 2 seconds
-    setDropdownTimeout(timeout);
+    }, 200); // 1 second delay
   };
 
   return (
-    <div className="h-[10%] bg-[#FBF8EF] p-6">
-      <nav className="h-full w-full flex lg:justify-evenly justify-between items-center flex-wrap">
+    <div className="h-[10%]">
+      <nav className="h-full p-6 w-full bg-[#FBF8EF] flex lg:justify-evenly justify-between items-center flex-wrap">
         <div className="logo-container">
           <img
             src="https://www.montdorinterior.com/wp-content/uploads/2023/07/montlogo.png"
@@ -56,41 +43,29 @@ const Navbar = () => {
             {[
               { path: "/", label: "Home" },
               {
-                path: "/work",
+                path: "",
                 label: "Work",
                 dropdown: [{ path: "/projects", label: "Projects" }],
               },
             ].map((link) => (
-              <div
-                key={link.path}
-                className="relative group"
-                onMouseEnter={link.dropdown ? handleMouseEnter : undefined}
-                onMouseLeave={link.dropdown ? handleMouseLeave : undefined}
-              
-              >
+              <div key={link.path} className="relative group">
                 <span
                   onClick={(e) => {
                     e.preventDefault();
-                    handleDelayedNavigation(link.path);
+                    if(Link.path !== ""){
+                      handleDelayedNavigation(link.path);
+                    }
                   }}
-                  className={`text-[#333333] text-xl font-semibold cursor-pointer relative capitalize`}
+                  className={`text-[#333333] text-xl font-semibold cursor-pointer relative capitalize ${link.label === "Work" ? "disabled":  "block"}  `}
                 >
                   {link.label}
                   {/* Bottom Border Animation */}
-                  <span
-                    className={`absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full`}
-                  ></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
                 </span>
 
                 {/* Dropdown Menu */}
                 {link.dropdown && (
-                  <div
-                    className={`absolute left-0 mt-10 bg-[#FBF8EF] shadow-md hover:bg-red-100 rounded-md w-40 transition-all duration-300 ${
-                      isDropdownOpen
-                        ? "opacity-100 visible"
-                        : "opacity-0 invisible"
-                    }`}
-                  >
+                  <div className="absolute left-0 mt-10 bg-[#FBF8EF] shadow-md hover:bg-red-100 rounded-md w-40 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                     {link.dropdown.map((item) => (
                       <span
                         key={item.path}
@@ -98,7 +73,7 @@ const Navbar = () => {
                           e.preventDefault();
                           handleDelayedNavigation(item.path);
                         }}
-                        className="block px-4 py-2 text-[#333333] cursor-pointer "
+                        className="block px-4 font-semibold py-2 text-[#333333] cursor-pointer"
                       >
                         {item.label}
                       </span>
@@ -108,11 +83,11 @@ const Navbar = () => {
               </div>
             ))}
           </div>
-          <Button content={"Book a Consultation"} onClick={handleBTN} />
+          <Button content={"Book a Consultation"} style={"bg-[#e40606]"}  onClick={handleBTN} />
         </div>
 
         {/* Mobile View */}
-        <div className="lg:hidden flex items-center">
+        <div className="lg:hidden flex flex-col items-center">
           <button
             onClick={toggleMenu}
             className="text-[#333333] flex flex-col items-center justify-center space-y-1"
@@ -135,6 +110,53 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+      {/* Hamburger Menu Links */}
+      {isMenuOpen && (
+        <div className="lg:hidden flex flex-col h-full items-center bg-[#ffffff] mt-2 py-4">
+          {[
+            { path: "/", label: "Home" },
+            {
+              path: "/",
+              label: "Work",
+              dropdown: [{ path: "/projects", label: "Projects" }],
+            },
+          ].map((link) => (
+            <div key={link.path} className="w-full">
+              <span
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (link.dropdown) {
+                    setIsDropdownOpenMobile(
+                      isDropdownOpenMobile === link.path ? null : link.path
+                    );
+                  } else {
+                   
+                    handleDelayedNavigation(link.path);
+                  }
+                }}
+                className={`text-[#333333] py-2 relative capitalize px-4 font-semibold ${link.dropdown ? "flex" : "block"} justify-between items-center`}
+              >
+                {link.label} {link.dropdown ?<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z"/></svg> : ""}
+              </span>
+              {link.dropdown &&
+                isDropdownOpenMobile === link.path &&
+                link.dropdown.map((item) => (
+                  <span
+                    key={item.path}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleDelayedNavigation(item.path);
+                    }}
+                    className="block px-6 mb-6 py-2 text-[#555555] font-semibold bg-[#FBF8EF]"
+                  >
+                    {item.label}
+                  </span>
+                ))}
+            </div>
+          ))}
+          <Button content={"Book a Consultation"}  onClick={handleBTN} />
+        </div>
+      )}
     </div>
   );
 };

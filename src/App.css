@@ -29,7 +29,7 @@ body, html {
 }
 
 .banner {
-  background-image: url("https://imgs.search.brave.com/NsLCVx4OPtyAde1CcwqS5pCEJUROtMZofFJpfNzAKcc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA0LzQ3LzI4LzU3/LzM2MF9GXzQ0NzI4/NTczOF9GY0dkZkZB/YnlZUVlOajZjdzhx/NFNTcEVtdFI1SmVR/MC5qcGc");
+  background-image: url("./Images/Intirior.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,9 +96,9 @@ body, html {
   }
 
   .text-section {
-    background-image: url('https://www.montdorinterior.com/wp-content/uploads/2024/05/montdor-banner.webp'); /* Optional: Add mobile-specific image */
+    background-image: url('./Images/Intirior.webp'); /* Optional: Add mobile-specific image */
     background-size: cover;
-    background-position: center;
+    background-position: 52.5%;
     height: 60vh; /* Occupy 60% of the screen height */
     padding: 1rem; /* Add padding for spacing */
     display: flex; /* Center content vertically and horizontally */
@@ -190,5 +190,52 @@ body, html {
     transform: translateX(-100%); 
   }
 }
+@keyframes iconcome {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(20px);
+  }
+  25%{
+      opacity: 1;
+      transform: scale(0.5) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.5) translateY(0);
+  }
+  100%{
+      opacity: 1;
+      transform: scale(1) translateY(0);
+  }
+}
 
+.iconcome {
+  animation: iconcome 0.5s ease-out forwards;
+}
+
+
+
+
+/* Throw Card Animation */
+@keyframes throwCard {
+  0% {
+    opacity: 0;
+    transform: translate(-100px, -200px) rotate(-30deg) scale(0.8);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(20px, 30px) rotate(5deg) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+.animate-throw-card {
+  animation: throwCard 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
