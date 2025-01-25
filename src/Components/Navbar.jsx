@@ -23,7 +23,8 @@ const Navbar = () => {
   const handleDelayedNavigation = (path) => {
     setTimeout(() => {
       navigate(path);
-    }, 200); // 1 second delay
+      setIsMenuOpen(false); // Close the menu after navigation
+    }, 200); // 200ms delay
   };
 
   return (
@@ -56,13 +57,13 @@ const Navbar = () => {
                 <span
                   onClick={(e) => {
                     e.preventDefault();
-                    if (Link.path !== "") {
+                    if (link.path !== "") {
                       handleDelayedNavigation(link.path);
                     }
                   }}
                   className={`text-[#333333] text-xl font-semibold cursor-pointer relative capitalize ${
                     link.label === "Work" ? "disabled" : "block"
-                  }  `}
+                  }`}
                 >
                   {link.label}
                   {/* Bottom Border Animation */}
@@ -71,7 +72,7 @@ const Navbar = () => {
 
                 {/* Dropdown Menu */}
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-10  shadow-md bg-red-100 rounded-md w-44 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                  <div className="absolute left-0 mt-10 shadow-md bg-red-100 rounded-md w-44 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                     {link.dropdown.map((item) => (
                       <span
                         key={item.path}
@@ -120,6 +121,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+
       {/* Hamburger Menu Links */}
       {isMenuOpen && (
         <div className="lg:hidden flex flex-col h-full items-center bg-[#ffffff] mt-2 py-4">
