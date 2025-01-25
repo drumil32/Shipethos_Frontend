@@ -45,18 +45,24 @@ const Navbar = () => {
               {
                 path: "",
                 label: "Work",
-                dropdown: [{ path: "/projects", label: "Projects" },{ path: "/project-videos", label: "Project Videos" },{ path: "/review", label: "Happy Customers" }],
+                dropdown: [
+                  { path: "/projects", label: "Projects" },
+                  { path: "/project-videos", label: "Project Videos" },
+                  { path: "/review", label: "Happy Customers" },
+                ],
               },
             ].map((link) => (
               <div key={link.path} className="relative group">
                 <span
                   onClick={(e) => {
                     e.preventDefault();
-                    if(Link.path !== ""){
+                    if (Link.path !== "") {
                       handleDelayedNavigation(link.path);
                     }
                   }}
-                  className={`text-[#333333] text-xl font-semibold cursor-pointer relative capitalize ${link.label === "Work" ? "disabled":  "block"}  `}
+                  className={`text-[#333333] text-xl font-semibold cursor-pointer relative capitalize ${
+                    link.label === "Work" ? "disabled" : "block"
+                  }  `}
                 >
                   {link.label}
                   {/* Bottom Border Animation */}
@@ -83,7 +89,11 @@ const Navbar = () => {
               </div>
             ))}
           </div>
-          <Button content={"Book a Consultation"} style={"bg-[#e40606]"}  onClick={handleBTN} />
+          <Button
+            content={"Book a Consultation"}
+            style={"bg-[#e40606]"}
+            onClick={handleBTN}
+          />
         </div>
 
         {/* Mobile View */}
@@ -118,7 +128,11 @@ const Navbar = () => {
             {
               path: "/",
               label: "Work",
-              dropdown: [{ path: "/projects", label: "Projects" }],
+              dropdown: [
+                { path: "/projects", label: "Projects" },
+                { path: "/project-videos", label: "Project Videos" },
+                { path: "/review", label: "Happy Customers" },
+              ],
             },
           ].map((link) => (
             <div key={link.path} className="w-full">
@@ -130,13 +144,27 @@ const Navbar = () => {
                       isDropdownOpenMobile === link.path ? null : link.path
                     );
                   } else {
-                   
                     handleDelayedNavigation(link.path);
                   }
                 }}
-                className={`text-[#333333] py-2 relative capitalize px-4 font-semibold ${link.dropdown ? "flex" : "block"} justify-between items-center`}
+                className={`text-[#333333] py-2 relative capitalize px-4 font-semibold ${
+                  link.dropdown ? "flex" : "block"
+                } justify-between items-center`}
               >
-                {link.label} {link.dropdown ?<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z"/></svg> : ""}
+                {link.label}{" "}
+                {link.dropdown ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#999999"
+                  >
+                    <path d="M480-345 240-585l56-56 184 183 184-183 56 56-240 240Z" />
+                  </svg>
+                ) : (
+                  ""
+                )}
               </span>
               {link.dropdown &&
                 isDropdownOpenMobile === link.path &&
@@ -154,7 +182,7 @@ const Navbar = () => {
                 ))}
             </div>
           ))}
-          <Button content={"Book a Consultation"}  onClick={handleBTN} />
+          <Button content={"Book a Consultation"} onClick={handleBTN} />
         </div>
       )}
     </div>
