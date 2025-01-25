@@ -45,7 +45,7 @@ const Navbar = () => {
               {
                 path: "",
                 label: "Work",
-                dropdown: [{ path: "/projects", label: "Projects" }],
+                dropdown: [{ path: "/projects", label: "Projects" },{ path: "/project-videos", label: "Project Videos" },{ path: "/review", label: "Happy Customers" }],
               },
             ].map((link) => (
               <div key={link.path} className="relative group">
@@ -65,7 +65,7 @@ const Navbar = () => {
 
                 {/* Dropdown Menu */}
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-10 bg-[#FBF8EF] shadow-md hover:bg-red-100 rounded-md w-40 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                  <div className="absolute left-0 mt-10  shadow-md bg-red-100 rounded-md w-44 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                     {link.dropdown.map((item) => (
                       <span
                         key={item.path}
@@ -73,7 +73,7 @@ const Navbar = () => {
                           e.preventDefault();
                           handleDelayedNavigation(item.path);
                         }}
-                        className="block px-4 font-semibold py-2 text-[#333333] cursor-pointer"
+                        className="block px-4 font-semibold hover:bg-[#FBF8EF] rounded-md py-2 text-[#333333] cursor-pointer"
                       >
                         {item.label}
                       </span>

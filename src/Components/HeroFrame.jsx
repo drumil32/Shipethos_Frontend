@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Button from "./Button";
 
 const HeroFrame = ({
@@ -8,33 +8,9 @@ const HeroFrame = ({
   secondHeading,
   secondHeadingStyle,
   bgImage,
+  fromStatus
 }) => {
-  // let [Count, setCount] = useState(0)
-  // const backImage = [
-  //   "https://imgs.search.brave.com/IJ9_ZPxUkQwuCSWY7wz-VeOhuIMnSm5LZ936rkbE2kA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzE1LzUxLzU4/LzM2MF9GXzUxNTUx/NTgwMF9EdDEwSDhK/QllrdGZkeENvNTJw/ZlF6R28yN1h6TVBy/Ni5qcGc",
-  //   "https://imgs.search.brave.com/kt48mZl2lkUqDY-LRj1EPkPrwp1PydQknIiuVAOLpCs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAxLzY0LzgyLzQx/LzM2MF9GXzE2NDgy/NDE3OV9IZ1hPTVpO/Qm5Zc09NelJtM1VV/bFNmOThjSUlma2ZK/ci5qcGc"
-  // ]
-  // let [backgroundImage, setBackgroundImage] = useState(
-  //   "url('https://imgs.search.brave.com/IJ9_ZPxUkQwuCSWY7wz-VeOhuIMnSm5LZ936rkbE2kA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzE1LzUxLzU4/LzM2MF9GXzUxNTUx/NTgwMF9EdDEwSDhK/QllrdGZkeENvNTJw/ZlF6R28yN1h6TVBy/Ni5qcGc')"
-  // );
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setBackgroundImage(
-  //       `url(${backImage[Count]})`
-  //     );
-
-  //     console.log(backgroundImage);
-      
-  //     if(Count === backImage.length){
-  //       setCount(0)
-  //     }else{
-  //       setCount(Count++)
-  //     }
-  //     }, 2000); // 2000ms delay (2 seconds)
-
-  //   return () => clearTimeout(timer); // Clean up the timeout when the component unmounts
-  // });
+ 
   return (
     <section className="banner md:h-full lg:h-[800px] flex flex-col md:flex-row justify-center items-center lg:justify-center  md:p-[20px] ">
       {/* Text Section with Background Image */}
@@ -56,7 +32,8 @@ const HeroFrame = ({
       </div>
 
       {/* Form Section */}
-      <div className="form form-section flex flex-col sm:w-full md:w-1/2 gap-4 bg-[#F9F6E6] rounded-lg p-12 mt-6 lg:mt-0 lg:w-[30%] shadow-inner-black">
+      {fromStatus ? <>
+        <div className="form form-section flex flex-col sm:w-full md:w-1/2 gap-4 bg-[#F9F6E6] rounded-lg p-12 mt-6 lg:mt-0 lg:w-[30%] shadow-inner-black">
         <h3 className="font-bold text-4xl text-[#212121] text-center">
           Talk to our Design Expert
         </h3>
@@ -93,6 +70,7 @@ const HeroFrame = ({
           />
         </div>
       </div>
+      </> : <></>}
     </section>
   );
 };

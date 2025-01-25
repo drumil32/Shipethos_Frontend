@@ -145,6 +145,7 @@ const Projects = () => {
         heading={"Projects"}
         secondHeading={"Home / Projects"}
         secondHeadingStyle={"capitalize"}
+        fromStatus={true}
       />
 
       <section className="h-fit w-full bg-[#FBF8EF]">

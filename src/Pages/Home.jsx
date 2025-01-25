@@ -77,7 +77,7 @@ const Home = () => {
 
   return (
     <>
-      <HeroFrame func={handleSpeakToUsBTN}/>
+      <HeroFrame func={handleSpeakToUsBTN} fromStatus={true}/>
 
       <section className="home-second ">
         <div className="home-second-inner md:p-[60px] px-4 py-[70px] h-full">
