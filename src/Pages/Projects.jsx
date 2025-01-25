@@ -155,7 +155,7 @@ const Projects = () => {
               Interior Design Projects Completed by Montdor Interior
             </p>
           </div>
-          <div className="showcase w-3/4 m-auto flex justify-center">
+          <div className="showcase w-10/12 m-auto flex justify-center">
             <div className="allCards  gap-5 grid sm:grid-cols-3 grid-cols-1">
               {data?.map((i) => (
                 <Card image={i.imageUrl} description={i.title} />
