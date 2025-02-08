@@ -23,7 +23,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://www.facebook.com/MONTDORPL/"
-                  className="bg-[#B82132] p-3 rounded-full text-white flex items-center justify-center"
+                  className="bg-[#2b21b8] p-3 rounded-full text-white flex items-center justify-center"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Like us on Facebook"
@@ -34,7 +34,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://www.instagram.com/montdorinterior/"
-                  className="bg-[#B82132] p-3 rounded-full text-white flex items-center justify-center"
+                  className="bg-[#2b21b8] p-3 rounded-full text-white flex items-center justify-center"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Follow Us on Instagram"
@@ -45,7 +45,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://www.youtube.com/c/MontdorInteriorPrivateLimited"
-                  className="bg-[#B82132] p-3 rounded-full text-white flex items-center justify-center"
+                  className="bg-[#2b21b8] p-3 rounded-full text-white flex items-center justify-center"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Subscribe us on Youtube"
@@ -297,14 +297,14 @@ const Footer = () => {
         © 2025 Montdor Interior Pvt. Ltd. |
         <a
           href="https://www.thanksweb.in/website-design-services.php"
-          className="text-[#ff0000] hover:text-white"
+          className="text-[#2b21b8] hover:text-white"
         >
          {" "} Web Design
         </a>{" "}
         & SEO
         <a
           href="https://www.thanksweb.in/"
-          className="text-[#ff0000] hover:text-white"
+          className="text-[#2b21b8] hover:text-white"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -313,7 +313,7 @@ const Footer = () => {
         &
         <a
           href="https://squarerootcommunications.com/"
-          className="text-[#ff0000] hover:text-white"
+          className="text-[#2b21b8] hover:text-white"
           target="_blank"
           rel="noopener noreferrer"
         >

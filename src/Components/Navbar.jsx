@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="h-[10%]">
+    <div className="h-[10%] navbar">
       <nav className="h-full p-6 w-full bg-[#FBF8EF] flex lg:justify-evenly justify-between items-center flex-wrap">
         <div className="logo-container">
           <img
@@ -67,12 +67,12 @@ const Navbar = () => {
                 >
                   {link.label}
                   {/* Bottom Border Animation */}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2f8fc9] transition-all duration-300 group-hover:w-full"></span>
                 </span>
 
                 {/* Dropdown Menu */}
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-10 shadow-md bg-red-100 rounded-md w-44 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                  <div className="absolute left-0 mt-10 shadow-md bg-[#ffff] rounded-md w-44 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                     {link.dropdown.map((item) => (
                       <span
                         key={item.path}
@@ -80,7 +80,7 @@ const Navbar = () => {
                           e.preventDefault();
                           handleDelayedNavigation(item.path);
                         }}
-                        className="block px-4 font-semibold hover:bg-[#FBF8EF] rounded-md py-2 text-[#333333] cursor-pointer"
+                        className="block px-4 font-semibold hover:bg-[#2f8fc9] hover:text-white rounded-md py-2 text-[#333333] cursor-pointer"
                       >
                         {item.label}
                       </span>
@@ -92,7 +92,7 @@ const Navbar = () => {
           </div>
           <Button
             content={"Book a Consultation"}
-            style={"bg-[#e40606]"}
+            style={"bg-[#2b21b8]"}
             onClick={handleBTN}
           />
         </div>

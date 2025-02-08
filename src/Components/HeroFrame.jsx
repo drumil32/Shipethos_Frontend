@@ -18,12 +18,12 @@ const HeroFrame = ({
         <article>
           <h1 className="flex lg:gap-1 gap-1 flex-col">
             <span
-              className={`mobh1 ${headingStyle} lg:text-4xl text-[25px] md:text-[40px] text-wrap text-white bg-[#B82132] font-bold w-fit p-2 uppercase inline-block rounded-lg`}
+              className={`mobh1 ${headingStyle} lg:text-4xl text-[25px] md:text-[40px] text-wrap text-white bg-[#2f8fc9] font-bold w-fit p-2 uppercase inline-block rounded-lg`}
             >
               {heading ? heading : "Best Interior Designer"}
             </span>
             <span
-              className={`mobcen ${secondHeadingStyle} lg:text-4xl text-[20px] md:text-[30px] text-white bg-[#212121] font-bold rounded-lg w-fit p-2 uppercase inline-block `}
+              className={`mobcen ${secondHeadingStyle} lg:text-4xl text-[20px] md:text-[30px] text-black bg-[#ffff] font-bold rounded-lg w-fit p-2 uppercase inline-block `}
             >
               {secondHeading ? secondHeading : "in Ahmedabad"}
             </span>
@@ -41,26 +41,26 @@ const HeroFrame = ({
           <input
             type="text"
             placeholder="Name"
-            className="form_input text-black placeholder-black border border-[#B82132] rounded-md px-4 py-2 focus:outline-none "
+            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none "
           />
           <input
             type="email"
             placeholder="Email"
-            className="form_input text-black placeholder-black border border-[#B82132] rounded-md px-4 py-2 focus:outline-none "
+            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none "
           />
           <input
             type="tel"
             placeholder="Phone Number"
-            className="form_input text-black placeholder-black border border-[#B82132] rounded-md px-4 py-2 focus:outline-none "
+            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none "
           />
           <input
             type="text"
             placeholder="City"
-            className="form_input text-black placeholder-black border border-[#B82132] rounded-md px-4 py-2 focus:outline-none "
+            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none "
           />
           <textarea
             placeholder="Your Requirement"
-            className="form_input text-black placeholder-black border border-[#B82132] rounded-md px-4 py-2 focus:outline-none resize-none"
+            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none resize-none"
           ></textarea>
         </form>
         <div className="frombtn flex justify-center">

@@ -31,17 +31,7 @@ const Home = () => {
       title: "Design Experts",
       description:
         "We’ll provide you with more than just style, substance, and sass! Let us create a space for you that truly embodies your style and individuality.",
-    },
-    {
-      title: "Customise Designs",
-      description:
-        "Say goodbye to generic designs and say hello to a place that genuinely shows your personality.",
-    },
-    {
-      title: "Home Interior Expert",
-      description:
-        "Allow us to turn your house from simple to stunning, improving its aesthetic value and practicality while assisting you in living the life of your desires.",
-    },
+    }
   ];
 
   const clientImages = [
@@ -73,45 +63,41 @@ const Home = () => {
     ); // Loop back to the last item
   };
 
-  const handleSpeakToUsBTN = () => {};
+  const handleSpeakToUsBTN = () => { };
 
   return (
     <>
-      <HeroFrame func={handleSpeakToUsBTN} fromStatus={true}/>
+      <HeroFrame func={handleSpeakToUsBTN} fromStatus={true} />
 
       <section className="home-second ">
         <div className="home-second-inner md:p-[60px] px-4 py-[70px] h-full">
 
-        <div className="flex justify-evenly lg:gap-32 gap-6 lg:flex-row  flex-col md:items-center">
-          <div className="flex flex-col lg:w-[580px] item-start leading-7 text-start w-full ">
-            <p className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full ">
-              Elegant Functional Interiors
-            </p>
-            <p className="text-[15px] text-[#212121]">
-              Montdor Interior combines style and functionality to craft spaces
-              tailored to your needs. As one of the{" "}
-              <strong>best interior designers in Ahmedabad</strong>, we deliver{" "}
-              <strong>luxury interiors Ahmedabad</strong> with seamless beauty
-              and practicality. Whether you need{" "}
-              <strong>turnkey interior designers in Ahmedabad</strong> or
-              customized designs, we turn your vision into reality. With{" "}
-              <strong>global vendor partnerships</strong>,{" "}
-              <strong>affordable packages</strong>, and a{" "}
-              <strong>pan-India presence</strong>, Montdor Interior stands out
-              for elegance, functionality, and customization. Let us create
-              inspiring spaces that reflect your style and fit your budget.
-            </p>
+          <div className="flex justify-evenly lg:gap-32 gap-6 lg:flex-row  flex-col md:items-center">
+            <div className="flex flex-col lg:w-[580px] item-start leading-7 text-start w-full ">
+              <p className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full ">
+                Elegant Functional Interiors
+              </p>
+              <p className="text-[15px] text-[#212121]">
+                Montdor Interior combines style and functionality to craft spaces
+                tailored to your needs. As one of the{" "}
+                <strong>best interior designers in Ahmedabad</strong>, we deliver{" "}
+                <strong>luxury interiors Ahmedabad</strong> with seamless beauty
+                and practicality. Whether you need{" "}
+                <strong>turnkey interior designers in Ahmedabad</strong> or
+                customized designs, we turn your vision into reality. With{" "}
+                <strong>global vendor partnerships</strong>,{" "}
+                <strong>affordable packages</strong>, and a{" "}
+                <strong>pan-India presence</strong>, Montdor Interior stands out
+                for elegance, functionality, and customization. Let us create
+                inspiring spaces that reflect your style and fit your budget.
+              </p>
+            </div>
           </div>
-
-          <div className="sm:mt-6">
-            <Button content={"Talk to our designer"} style={"p-4"} />
-          </div>
-        </div>
         </div>
 
       </section>
 
-      <section className="home-three h-full bg-[#FBF8EF]">
+      <section className="home-three h-full bg-[#eff1fb]">
         {/* Top Section */}
         <div className="lg:px-[160px] md:p-[60px] px-4 py-[70px] lg:p-[60px]">
           <div>
@@ -129,22 +115,21 @@ const Home = () => {
 
         {/* Items Section */}
         <div className=" scrollber bg-[#ffffff] ">
-          <div className=" bg-[#FBF8EF2b] p-4 sm:p-[6%] lg:p-[8%]">
+          <div className=" bg-[#eff1fb2b] p-4 sm:p-[6%] lg:p-[8%]">
             <div className="relative">
               {/* Items Wrapper */}
               <div className="overflow-hidden">
                 <div
                   className="flex transition-transform duration-300 ease-in-out gap-6"
                   style={{
-                    transform: `translateX(-${
-                      currentIndex * (window.innerWidth >= 1024 ? 20 : window.innerWidth >=795 && window.innerWidth <=1024  ? 30 : 106.3)
-                    }%)`, // Applies 30% for lg/md, 100% for mobile
+                    transform: `translateX(-${currentIndex * (window.innerWidth >= 1024 ? 20 : window.innerWidth >= 795 && window.innerWidth <= 1024 ? 30 : 106.3)
+                      }%)`, // Applies 30% for lg/md, 100% for mobile
                   }}
                 >
                   {items.map((item, index) => (
                     <div
                       key={index}
-                      className="bg-[#FBF8EF] border-2 border-[#B82132] rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[300px] flex-shrink-0 py-[50px]"
+                      className="bg-[#ffff] border-2 border-[#2f8fc9] rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[300px] flex-shrink-0 py-[50px]"
                     >
                       <h3 className="text-[#333] text-[30px] lg:text-[20px] font-bold">
                         {item.title}
@@ -191,7 +176,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="interior_sec page_sec md:p-[60px] px-4 py-[70px] lg:p-[80px] bg-[#FBF8EF]">
+      <section className="interior_sec page_sec md:p-[60px] px-4 py-[70px] lg:p-[80px] bg-[#eff1fb]">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:justify-between lg:flex-row items-center justify-between mb-12">
           <div className="lg:w-9/12">
@@ -279,9 +264,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="banrow px-4 bg-[#FBF8EF]">
+      <section className="banrow px-4 bg-[#eff1fb]">
         <div className="container mx-auto text-center w-[84%]">
-          <div className="flex flex-row items-center justify-between border-[3px] border-[#B82132] rounded-[20px] overflow-hidden relative h-[300px]">
+          <div className="flex flex-row items-center justify-between border-[3px] border-[#2b21b8] rounded-[20px] overflow-hidden relative h-[300px]">
             {/* Image Column */}
             <div className="banimgcol w-1/2 h-full">
               <img
@@ -304,7 +289,7 @@ const Home = () => {
               <p>
                 <a
                   href="https://www.montdorinterior.com/kitchen-cost-calculator/"
-                  className="banspan text-[#fd0000] underline decoration-black hover:no-underline"
+                  className="banspan text-[#2f8fc9] underline decoration-black hover:no-underline"
                 >
                   Find one close to you &gt;
                 </a>
@@ -314,7 +299,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="following_projects page_sec md:p-[60px] flex flex-col gap-12 px-6 py-[70px] lg:p-[60px] bg-[#FBF8EF]">
+      <section className="following_projects page_sec md:p-[60px] flex flex-col gap-12 px-6 py-[70px] lg:p-[60px] bg-[#eff1fb]">
         <div className="container">
           <div className="row">
             <div className="col-md-7">
@@ -352,7 +337,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="vendors_sec page_sec px-4 pb-[41px]  lg:p-[0px] bg-[#FBF8EF]">
+      <section className="vendors_sec page_sec px-4 pb-[41px]  lg:p-[0px] bg-[#eff1fb]">
         <div className="row a-item mb-8 md:px-[6%]">
           <div className="col-md-9">
             <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[52%]">
@@ -520,8 +505,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="cal_to_action md:p-[70px] px-4 py-[60px] lg:p-[80px] bg-[#FBF8EF]">
-        <div className=" bg-[#FBF8EF]  ">
+      <section className="cal_to_action md:p-[70px] px-4 py-[60px] lg:p-[80px] bg-[#eff1fb]">
+        <div className=" bg-[#eff1fb]  ">
           <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[79%]">
             Unlock Doors to Your Dream Home with #1 Interior Designers in
             Ahmedabad!
@@ -539,9 +524,8 @@ const Home = () => {
           </p>
 
           <div
-            className={`moretext mb-4 ${
-              isReadMore ? "h-auto" : "h-0 overflow-hidden"
-            }`}
+            className={`moretext mb-4 ${isReadMore ? "h-auto" : "h-0 overflow-hidden"
+              }`}
           >
             <p className="mb-4 text-[15px]">
               We always opt for tailored interior designing services for our
