@@ -28,14 +28,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="h-[10%] navbar">
-      <nav className="h-full p-6 w-full bg-[#f2f5fc] flex lg:justify-evenly justify-between items-center flex-wrap">
-        <div className="logo-container">
-          <img
+    <div className="h-[10%]">
+      <nav className="h-full p-6 w-full bg-[#f2f5fc] flex lg:justify-evenly justify-between items-center flex-wrap ">
+        
+        <div className="logo-container border-b-2 border-r-2 border-[#2f44c9] rounded-lg p-1 ">
+          {/* <img
             src="https://www.montdorinterior.com/wp-content/uploads/2023/07/montlogo.png"
             alt="Logo"
             title="Best Interior Designer in Ahmedabad"
-          />
+          /> */}
+          <p className="font-bold text-blue-500 text-4xl flex gap-0"><img src="https://img.favpng.com/9/25/10/blue-letter-s-png-png-favpng-vPiwErhFg5LWdKZer29244npE.jpg" alt="" className="w-10" /><span className="ml-[-4px]">hilpethos</span></p>
         </div>
 
         {/* Desktop View */}
@@ -53,7 +55,8 @@ const Navbar = () => {
                 ],
               },
             ].map((link) => (
-              <div key={link.path} className="relative group">
+              <div key={link.path} className="relative group" onClick={()=>{console.log("he");
+              }}>
                 <span
                   onClick={(e) => {
                     e.preventDefault();
@@ -67,12 +70,12 @@ const Navbar = () => {
                 >
                   {link.label}
                   {/* Bottom Border Animation */}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2f8fc9] transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
                 </span>
 
                 {/* Dropdown Menu */}
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-10 shadow-md bg-[#ffff] rounded-md w-44 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                  <div className="absolute left-0 mt-10 shadow-md bg-red-100 rounded-md w-44 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                     {link.dropdown.map((item) => (
                       <span
                         key={item.path}
@@ -80,7 +83,7 @@ const Navbar = () => {
                           e.preventDefault();
                           handleDelayedNavigation(item.path);
                         }}
-                        className="block px-4 font-semibold hover:bg-[#2f8fc9] hover:text-white rounded-md py-2 text-[#333333] cursor-pointer"
+                        className="block px-4 font-semibold hover:bg-[#FBF8EF] rounded-md py-2 text-[#333333] cursor-pointer"
                       >
                         {item.label}
                       </span>
@@ -92,10 +95,11 @@ const Navbar = () => {
           </div>
           <Button
             content={"Book a Consultation"}
-            style={"bg-[#2b21b8]"}
+            style={"bg-[#e40606]"}
             onClick={handleBTN}
           />
         </div>
+
 
         {/* Mobile View */}
         <div className="lg:hidden flex flex-col items-center">

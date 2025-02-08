@@ -115,62 +115,33 @@ const Home = () => {
 
         {/* Items Section */}
         <div className=" scrollber bg-[#ffffff] ">
-          <div className=" bg-[#eff1fb2b] p-4 sm:p-[6%] lg:p-[8%]">
-            <div className="relative">
+          <div className=" bg-[#eff1fb2b] w-full p-4 sm:p-[6%] lg:p-[6%]">
+            <div className="relative ">
               {/* Items Wrapper */}
-              <div className="overflow-hidden">
-                <div
-                  className="flex transition-transform duration-300 ease-in-out gap-6"
-                  style={{
-                    transform: `translateX(-${currentIndex * (window.innerWidth >= 1024 ? 20 : window.innerWidth >= 795 && window.innerWidth <= 1024 ? 30 : 106.3)
-                      }%)`, // Applies 30% for lg/md, 100% for mobile
-                  }}
-                >
-                  {items.map((item, index) => (
-                    <div
-                      key={index}
-                      className="bg-[#ffff] border-2 border-[#2f8fc9] rounded-md p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 w-full md:w-1/3 lg:w-auto lg:max-w-[300px] flex-shrink-0 py-[50px]"
-                    >
-                      <h3 className="text-[#333] text-[30px] lg:text-[20px] font-bold">
-                        {item.title}
-                      </h3>
-                      <p className="lg:text-[14px] text-[20px] leading-relaxed text-[#333333]">
-                        {item.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+              <div className="overflow-hidden relative w-full">
+              <div className="overflow-hidden relative w-full">
+  <div className="flex gap-6 animate-loop-scroll flex-nowrap">
+    {items.concat(items).map((item, index) => (
+      <div
+        key={index}
+        className="bg-white border-2 border-[#2f8fc9] rounded-md 
+                   p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 
+                   w-[200px] md:w-[250px] lg:w-[280px] flex-shrink-0"
+      >
+        <h3 className="text-[#333] text-[20px] md:text-[24px] font-bold">
+          {item.title}
+        </h3>
+        <p className="text-[14px] md:text-[16px] leading-relaxed text-[#333]">
+          {item.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
               </div>
 
-              {/* Navigation Arrows */}
-              <button
-                onClick={goToPrevious}
-                className="absolute -left-4 sm:-left-10 top-1/2 transform -translate-y-1/2 text-white rounded-full px-3 py-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#000000"
-                >
-                  <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
-                </svg>
-              </button>
-              <button
-                onClick={goToNext}
-                className="absolute -right-4 sm:-right-10 top-1/2 transform -translate-y-1/2 text-white rounded-full px-3 py-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#000000"
-                >
-                  <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
-                </svg>
-              </button>
+
             </div>
           </div>
         </div>

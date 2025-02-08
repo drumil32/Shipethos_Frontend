@@ -21,7 +21,7 @@ const HeroFrame = ({
             {heading ? heading : "Best Interior Designer"}
           </span>
           <span
-            className={`mobcen ${secondHeadingStyle} lg:text-4xl text-[20px] md:text-[30px] text-black bg-[#ffff] font-bold rounded-lg w-fit p-2 uppercase inline-block `}
+            className={`mobcen ${secondHeadingStyle} lg:text-4xl text-[20px] md:text-[30px] text-[#2f8fc9] bg-[#ffff] font-bold rounded-lg w-fit p-2 uppercase inline-block `}
           >
             {secondHeading ? secondHeading : "in Ahmedabad"}
           </span>
@@ -44,30 +44,30 @@ const HeroFrame = ({
           <input
             type="text"
             placeholder="Name"
-            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
+            className="form_input text-black placeholder-zinc-600 border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
       drop-shadow-lg shadow-[inset_0_0_10px_rgba(47,143,201,0.3)]" />
 
           <input
             type="email"
             placeholder="Email"
-            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
+            className="form_input text-black placeholder-zinc-600 border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
       drop-shadow-lg shadow-[inset_0_0_10px_rgba(47,143,201,0.3)]" />
 
           <input
             type="tel"
             placeholder="Phone Number"
-            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
+            className="form_input text-black placeholder-zinc-600 border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
       drop-shadow-lg shadow-[inset_0_0_10px_rgba(47,143,201,0.3)]" />
 
           <input
             type="text"
             placeholder="City"
-            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
+            className="form_input text-black placeholder-zinc-600 border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
       drop-shadow-lg shadow-[inset_0_0_10px_rgba(47,143,201,0.3)]" />
 
           <textarea
             placeholder="Your Requirement"
-            className="form_input text-black placeholder-black border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
+            className="form_input text-black placeholder-zinc-600 border border-[#2f8fc9] rounded-md px-4 py-2 focus:outline-none 
       resize-none drop-shadow-lg shadow-[inset_0_0_10px_rgba(47,143,201,0.3)]"
           ></textarea>
         </form>
