@@ -55,12 +55,16 @@ body, html {
 }
 
 .form-section {
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   position: relative; /* Ensure the pseudo-element is positioned relative to this section */
   background-image: url("./Images/FrontBack2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: 0; /* Ensure content appears above the pseudo-element */
+  /* background-blend-mode: overlay; */
+  /* background-blend-mode: luminosity; */
+  background-blend-mode: screen;
+  z-index: 1; /* Ensure content appears above the pseudo-element */
   overflow: hidden; /* Prevent the pseudo-element from overflowing */
 }
 
