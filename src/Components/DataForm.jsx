@@ -4,6 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const DataForm = () => {
   const [showForm, setShowForm] = useState(false);
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",

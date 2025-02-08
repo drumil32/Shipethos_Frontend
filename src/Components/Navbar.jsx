@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "./Button";
+import DataForm from "./DataForm";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,7 +9,9 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleBTN = () => {};
+  const handleBTN = (e) => {
+    navigate("/")
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -29,7 +32,7 @@ const Navbar = () => {
 
   return (
     <div className="h-[10%]">
-      <nav className="h-full p-6 w-full bg-[#f2f5fc] flex lg:justify-evenly justify-between items-center flex-wrap z-40">
+      <nav className="h-full p-6 w-full bg-[#f0f4ff] flex lg:justify-evenly justify-between items-center flex-wrap z-40">
         
         <div className="logo-container border-b-2 border-r-2 border-[#2f44c9] rounded-lg p-1 ">
           {/* <img
@@ -94,7 +97,6 @@ const Navbar = () => {
           </div>
           <Button
             content={"Book a Consultation"}
-            style={"bg-[#e40606]"}
             onClick={handleBTN}
           />
         </div>
