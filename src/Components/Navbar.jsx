@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <div className="h-[10%] navbar">
-      <nav className="h-full p-6 w-full bg-[#FBF8EF] flex lg:justify-evenly justify-between items-center flex-wrap">
+      <nav className="h-full p-6 w-full bg-[#f2f5fc] flex lg:justify-evenly justify-between items-center flex-wrap">
         <div className="logo-container">
           <img
             src="https://www.montdorinterior.com/wp-content/uploads/2023/07/montlogo.png"

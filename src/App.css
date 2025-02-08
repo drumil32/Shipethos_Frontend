@@ -131,17 +131,49 @@ body, html {
 
 .item {
   border: 1px solid rgb(0, 21, 255);
-  background-color: #bcc3f6;
+  background-color: #c5dff2;
   border-radius: 8px;
   padding: 10px;
   min-width: 280px; /* Width of each item */
   height: 160px; /* Height of each item */
 }
-nav{
+nav {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  position: relative;
+  z-index: -1;
+}
+
+nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("./Images/IMG-20250208-WA0001[1].jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: left;
+  transform: rotate(0deg); /* Rotate the background image only */
+  z-index: -1;
 }
+nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./Images/IMG-20250208-WA0001[1].jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  transform: rotate(180deg); /* Rotate the background image only */
+  z-index: -1;
+}
+
 
 .client-img {
   display: block;
@@ -168,6 +200,7 @@ nav{
   align-items: center;
   display: flex;
   justify-content: center;
+
 }
 .vendors_img .col2 img:hover {
   opacity: 1;
@@ -181,7 +214,7 @@ nav{
 
 .client-images-wrapper {
   display: flex;
-  animation: scrollImages 20s linear infinite; /* Adjust the duration for scrolling speed */
+  animation: scrollImages 100s linear infinite; /* Adjust the duration for scrolling speed */
 }
 
 .item {
@@ -245,4 +278,6 @@ nav{
 .animate-throw-card {
   animation: throwCard 0s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+
 

@@ -97,7 +97,7 @@ const Home = () => {
 
       </section>
 
-      <section className="home-three h-full bg-[#eff1fb]">
+      <section className="home-three h-full bg-[#0841bd24]">
         {/* Top Section */}
         <div className="lg:px-[160px] md:p-[60px] px-4 py-[70px] lg:p-[60px]">
           <div>
@@ -176,7 +176,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="interior_sec page_sec md:p-[60px] px-4 py-[70px] lg:p-[80px] bg-[#eff1fb]">
+      <section className="interior_sec page_sec md:p-[60px] px-4 py-[70px] lg:p-[80px] bg-[#0841bd24]">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:justify-between lg:flex-row items-center justify-between mb-12">
           <div className="lg:w-9/12">
@@ -264,7 +264,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="banrow px-4 bg-[#eff1fb]">
+      <section className="banrow px-4 bg-[#0841bd24]">
         <div className="container mx-auto text-center w-[84%]">
           <div className="flex flex-row items-center justify-between border-[3px] border-[#2b21b8] rounded-[20px] overflow-hidden relative h-[300px]">
             {/* Image Column */}
@@ -299,7 +299,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="following_projects page_sec md:p-[60px] flex flex-col gap-12 px-6 py-[70px] lg:p-[60px] bg-[#eff1fb]">
+      <section className="following_projects page_sec md:p-[60px] flex flex-col gap-12 px-6 py-[70px] lg:p-[60px] bg-[#dce4f6]">
         <div className="container">
           <div className="row">
             <div className="col-md-7">
@@ -337,7 +337,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="vendors_sec page_sec px-4 pb-[41px]  lg:p-[0px] bg-[#eff1fb]">
+      <section className="vendors_sec page_sec px-4 pb-[41px]  lg:p-[0px] bg-[#0841bd24]">
         <div className="row a-item mb-8 md:px-[6%]">
           <div className="col-md-9">
             <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[52%]">
@@ -505,8 +505,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="cal_to_action md:p-[70px] px-4 py-[60px] lg:p-[80px] bg-[#eff1fb]">
-        <div className=" bg-[#eff1fb]  ">
+      <section className="cal_to_action md:p-[70px] px-4 py-[60px] lg:p-[80px] bg-[#0841bd24]">
+        <div className=" bg-[#dce4f6]  ">
           <h2 className="font-bold text-[1.7rem] md:text-4xl text-[#212121] mb-3 w-full lg:w-[79%]">
             Unlock Doors to Your Dream Home with #1 Interior Designers in
             Ahmedabad!
