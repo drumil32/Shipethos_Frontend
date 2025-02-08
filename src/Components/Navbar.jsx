@@ -55,8 +55,7 @@ const Navbar = () => {
                 ],
               },
             ].map((link) => (
-              <div key={link.path} className="relative group" onClick={()=>{console.log("he");
-              }}>
+              <div key={link.path} className="relative group" >
                 <span
                   onClick={(e) => {
                     e.preventDefault();
@@ -181,7 +180,7 @@ const Navbar = () => {
                       e.preventDefault();
                       handleDelayedNavigation(item.path);
                     }}
-                    className="block px-6 mb-6 py-2 text-[#555555] font-semibold bg-[#FBF8EF]"
+                    className="block px-6 mb-6 py-2 text-[#000000] font-semibold bg-[#96d9ec]"
                   >
                     {item.label}
                   </span>
