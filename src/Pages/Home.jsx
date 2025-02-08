@@ -119,29 +119,26 @@ const Home = () => {
             <div className="relative ">
               {/* Items Wrapper */}
               <div className="overflow-hidden relative w-full">
-              <div className="overflow-hidden relative w-full">
-  <div className="flex gap-6 animate-loop-scroll flex-nowrap">
-    {items.concat(items).map((item, index) => (
-      <div
-        key={index}
-        className="bg-white border-2 border-[#2f8fc9] rounded-md 
+                <div className="overflow-hidden relative w-full">
+                  <div className="flex gap-6 animate-loop-scroll flex-nowrap">
+                    {items.concat(items).map((item, index) => (
+                      <div
+                        key={index}
+                        className="bg-white border-2 border-[#2f8fc9] rounded-md 
                    p-4 md:p-6 lg:p-8 flex flex-col text-center gap-4 
                    w-[200px] md:w-[250px] lg:w-[280px] flex-shrink-0"
-      >
-        <h3 className="text-[#333] text-[20px] md:text-[24px] font-bold">
-          {item.title}
-        </h3>
-        <p className="text-[14px] md:text-[16px] leading-relaxed text-[#333]">
-          {item.description}
-        </p>
-      </div>
-    ))}
-  </div>
-</div>
-
+                      >
+                        <h3 className="text-[#333] text-[20px] md:text-[24px] font-bold">
+                          {item.title}
+                        </h3>
+                        <p className="text-[14px] md:text-[16px] leading-relaxed text-[#333]">
+                          {item.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-
-
             </div>
           </div>
         </div>

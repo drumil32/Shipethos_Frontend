@@ -2,8 +2,8 @@ import React from "react";
 
 const Card = ({ image, description }) => {
   return (
-    <div className="card w-full border-solid border-2 border-black rounded-md">
-      <div className="img">
+    <div className="card w-full border-solid border-4 bg-blue-400 border-blue-300 rounded-lg">
+      <div className="img ">
         <img
           src={`${image}`}
           alt=""
@@ -12,8 +12,8 @@ const Card = ({ image, description }) => {
           width={"480px"}
         />
       </div>
-      <div className="description p-2">
-        <p className="text-2xl font-bold ">{description}</p>
+      <div className="description p-2 ">
+        <p className="text-2xl font-bold bg-white rounded-lg p-1">{description}</p>
       </div>
     </div>
   );

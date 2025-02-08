@@ -148,7 +148,7 @@ const Projects = () => {
         fromStatus={true}
       />
 
-      <section className="h-fit w-full bg-[#FBF8EF]">
+      <section className="h-fit w-full bg-[#0841bd24]">
         <div className="container lg:p-8 p-2 h-full w-full flex justify-center flex-col m-auto">
           <div className="heading m-3">
             <p className="font-bold text-[1.7rem] md:text-4xl text-[#333333] m-auto w-4/5">
