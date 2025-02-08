@@ -36,7 +36,7 @@ const DataForm = () => {
 
   return (
     showForm && (
-      <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+      <div className=" fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
         {/* Form Container */}
         <div
           className="relative bg-gradient-to-br from-[#2f8fc9] to-transparent p-8 rounded-xl shadow-2xl 
