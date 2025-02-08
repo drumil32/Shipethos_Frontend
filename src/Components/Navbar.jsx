@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <div className="h-[10%]">
-      <nav className="h-full p-6 w-full bg-[#f2f5fc] flex lg:justify-evenly justify-between items-center flex-wrap ">
+      <nav className="h-full p-6 w-full bg-[#f2f5fc] flex lg:justify-evenly justify-between items-center flex-wrap z-40">
         
         <div className="logo-container border-b-2 border-r-2 border-[#2f44c9] rounded-lg p-1 ">
           {/* <img
@@ -70,12 +70,12 @@ const Navbar = () => {
                 >
                   {link.label}
                   {/* Bottom Border Animation */}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2f44c9] transition-all duration-300 group-hover:w-full"></span>
                 </span>
 
                 {/* Dropdown Menu */}
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-10 shadow-md bg-red-100 rounded-md w-44 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                  <div className="absolute left-0 mt-10 shadow-md bg-[#bbd0f3] rounded-md w-44 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                     {link.dropdown.map((item) => (
                       <span
                         key={item.path}
@@ -83,7 +83,7 @@ const Navbar = () => {
                           e.preventDefault();
                           handleDelayedNavigation(item.path);
                         }}
-                        className="block px-4 font-semibold hover:bg-[#FBF8EF] rounded-md py-2 text-[#333333] cursor-pointer"
+                        className="block px-4 font-semibold hover:bg-[#ffffff] rounded-md py-2 text-[#333333] cursor-pointer"
                       >
                         {item.label}
                       </span>

@@ -2,7 +2,7 @@ import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa'; // Import icons
 
 const FloatingIcons = () => {
   return (
-    <div className="iconcome fixed bottom-4 right-4 flex flex-col gap-4 items-center">
+    <div className="iconcome z-50 fixed bottom-4 right-4 flex flex-col gap-4 items-center">
       {/* WhatsApp Icon */}
       <a
         href="https://web.whatsapp.com/send?phone='" // Replace with your WhatsApp number link
