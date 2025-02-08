@@ -79,7 +79,7 @@ const videos = [
 ];
 
 const VideoCard = ({ title, url }) => (
-  <div className="video-card bg-white shadow-md rounded-lg p-4 w-full">
+  <div className="video-card bg-[#2f8fc9] shadow-md rounded-lg p-4 w-full">
     <iframe
       className="w-full h-80 rounded-lg"
       src={url}
@@ -89,7 +89,7 @@ const VideoCard = ({ title, url }) => (
       allowFullScreen
       loading="lazy" // Lazy load iframe
     ></iframe>
-    <h3 className="mt-4 text-lg font-semibold text-gray-800">{title}</h3>
+    <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
   </div>
 );
 
