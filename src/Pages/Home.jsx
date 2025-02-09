@@ -155,9 +155,7 @@ const Home = () => {
               Take a tour of the homes we’ve designed for our customers
             </p>
           </div>
-          <div className="lg:w-[20%] md:w-[30%] w-full mt-4 lg:mt-0">
-            <Button content="View all Projects" style={"p-2 w-full "} />
-          </div>
+          
         </div>
 
         <div className="containe lg:px-4">
